@@ -174,3 +174,91 @@ D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.Prope
 D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.csproj.GenerateResource.Cache
 D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\ETN_Cinema\obj\Debug\RdlCompile.cache
 D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\ETN_Cinema\obj\Debug\RdlCompile.compiled
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\ETN_Cinema.exe.config
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.exe
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\ETN_Cinema.exe
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\ETN_Cinema.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\BUL.dll
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\PUBLIC.dll
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\DAL.dll
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\BUL.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\PUBLIC.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\DAL.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.csprojResolveAssemblyReference.cache
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien ban ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien chinh sua nhan vien.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien chon ghe dat ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien chon ghe.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien dang ky khach hang.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien dang nhap.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien mo suat chieu.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nguoi su dung.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap khuyen mai.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap nhan vien.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap phim.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap thuc don.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien phieu dat ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien phong tai chinh.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien quan li nhan su.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua khuyen mai.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua suat chieu.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua thong tin khach hang.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua thong tin phim.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thay doi mat khau khach hang.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thay doi mat khau.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thong ke doanh so ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thong tin khach hang.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien tinh gia ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien tinh luong nhan vien.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien xem ho so.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien xem phieu dat ve.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien xem thong tin phim.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_marketing.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_quan_li_phong_kinh_doanh.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_quan_ly_khach_hang.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_quan_ly_phim.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ReportViewer.baml
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien ban ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien chinh sua nhan vien.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien chon ghe dat ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien chon ghe.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien dang ky khach hang.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien dang nhap.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien mo suat chieu.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nguoi su dung.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap khuyen mai.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap nhan vien.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap phim.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap thuc don.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien nhap ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien phieu dat ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien phong tai chinh.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien quan li nhan su.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua khuyen mai.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua suat chieu.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua thong tin khach hang.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien sua thong tin phim.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thay doi mat khau khach hang.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thay doi mat khau.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thong ke doanh so ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien thong tin khach hang.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien tinh gia ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien tinh luong nhan vien.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien xem ho so.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien xem phieu dat ve.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao dien xem thong tin phim.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_marketing.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_quan_li_phong_kinh_doanh.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_quan_ly_khach_hang.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\Giao_dien_quan_ly_phim.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ReportViewer.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\App.g.cs
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema_MarkupCompile.cache
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.g.resources
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.Properties.Resources.resources
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema.csproj.GenerateResource.Cache
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\RdlCompile.cache
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\RdlCompile.compiled

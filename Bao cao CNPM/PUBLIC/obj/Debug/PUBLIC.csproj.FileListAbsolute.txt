@@ -8,3 +8,8 @@ D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.dll
 D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.dll
 D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.pdb
 D:\Bảo Trì PM\1.Maintance2\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.dll
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.pdb
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.csprojResolveAssemblyReference.cache
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.dll
+F:\My courses\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.pdb
