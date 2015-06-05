@@ -264,6 +264,78 @@ namespace ETN_Cinema {
         #line default
         #line hidden
         
+        
+        #line 35 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label2;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 36 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 37 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label3;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 38 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label4;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 39 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label5;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 40 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label6;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 41 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label7;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 42 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label8;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 43 "..\..\Giao dien nhap phim.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label warning_Label9;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -389,6 +461,33 @@ namespace ETN_Cinema {
             return;
             case 28:
             this.tb_NamPhatHanh = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 29:
+            this.warning_Label2 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 30:
+            this.warning_Label1 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 31:
+            this.warning_Label3 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 32:
+            this.warning_Label4 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 33:
+            this.warning_Label5 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 34:
+            this.warning_Label6 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 35:
+            this.warning_Label7 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 36:
+            this.warning_Label8 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 37:
+            this.warning_Label9 = ((System.Windows.Controls.Label)(target));
             return;
             }
             this._contentLoaded = true;
