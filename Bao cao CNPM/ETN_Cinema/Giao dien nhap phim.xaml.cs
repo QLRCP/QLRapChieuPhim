@@ -35,18 +35,10 @@ namespace ETN_Cinema
             cb_TheLoai.ItemsSource = LtlPUB;
             cb_TheLoai.DisplayMemberPath = "TenLP";
             cb_TheLoai.SelectedValuePath = "MaLP";
-            m_Exception = new MyException();
-            m_Exception.AddImage(img_Poster, lb_Poster);
-            m_Exception.AddDateTimePicker(datepicker_NgayKhoiChieu, lb_NgayKhoiChieu);
-            m_Exception.AddTextBox(tb_TenPhim, lb_TenPhim);
-            m_Exception.AddTextBox(tb_NoiDung, lb_NoiDung);
-            m_Exception.AddTextBox(tb_ThoiLuong, lb_ThoiLuong);
-            m_Exception.AddTextBox(tb_DienVien, lb_DienVien);
-            m_Exception.AddTextBox(tb_DaoDien, lb_DaoDien);
-            m_Exception.AddTextBox(tb_NamPhatHanh, lb_NamPhatHanh);
-            m_Exception.AddTextBox(tb_NuocSanXuat, lb_NuocSanXuat);
-            //m_Exception.AddTextBox(tb_TheLoai, lb_TheLoai);
-            m_Exception.AddTextBox(tb_DoTuoiQuyDinh, lb_DoTuoiQuyDinh);
+            lb_MaNV.Content = VarGlobal.g_NhanVienPub.MaNV;
+            lb_TenNV.Content = VarGlobal.g_NhanVienPub.HoTen; ;
+            datepicker_NgayKhoiChieu.SelectedDate = DateTime.Now;
+
         }
 
         //private string IncreaseIndexBy1(string _StringInput, string _StartIndex)
@@ -63,22 +55,48 @@ namespace ETN_Cinema
         //    return result;
         //}
 
+        private CheckNhapPhim _checkNhap = new CheckNhapPhim();
+
+        private void KT_NhapPhim()
+        {
+            _checkNhap.Check_Nhap(tb_TenPhim, cb_TheLoai, tb_NoiDung, tb_ThoiLuong, tb_DienVien, tb_DaoDien, tb_NuocSanXuat, tb_DoTuoiQuyDinh, tb_NamPhatHanh, filmPosterURI);
+
+            warning_Tenphim.Source = _checkNhap._ten._checkImage;
+            warning_Theloai.Source = _checkNhap._theloai._checkImage;
+            warning_Noidung.Source = _checkNhap._noidung._checkImage;
+            warning_Thoiluong.Source = _checkNhap._thoiluong._checkImage;
+            warning_Dienvien.Source = _checkNhap._dienvien._checkImage;
+            warning_Daodien.Source = _checkNhap._daodien._checkImage;
+            warning_Nuocsx.Source = _checkNhap._nuocsx._checkImage;
+            warning_Tuoi.Source = _checkNhap._tuoiquydinh._checkImage;
+                 warning_Namphathanh.Source = _checkNhap._namphathanh._checkImage;
+            warning_Poster.Source = _checkNhap._poster._checkImage;
+ 
+            
+            warning_Label1.Content = _checkNhap._ten._warningMsg;
+            warning_Label10.Content = _checkNhap._theloai._warningMsg;
+            warning_Label2.Content = _checkNhap._noidung._warningMsg;
+            warning_Label3.Content = _checkNhap._thoiluong._warningMsg;
+            warning_Label4.Content = _checkNhap._dienvien._warningMsg;
+            warning_Label5.Content = _checkNhap._daodien._warningMsg;
+            warning_Label6.Content = _checkNhap._nuocsx._warningMsg;
+            warning_Label7.Content = _checkNhap._tuoiquydinh._warningMsg;
+            warning_Label8.Content = _checkNhap._namphathanh._warningMsg;
+            warning_Label9.Content = _checkNhap._poster._warningMsg;
+
+        }
+
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
             Phim_Pub phim = new Phim_Pub();
             Phim_BUL phim_bul = new Phim_BUL();
             //Phim_BUL phim_reader = new Phim_BUL();
             //m_Exception.ShowMessageBox();
-            int temp;
-            try
+            KT_NhapPhim();
+
+            if (_checkNhap._warningMsg == "")
             {
-                m_Exception.ThrowExceptionForMessageBox();
-                if (!int.TryParse(tb_ThoiLuong.Text, out temp))
-                {
-                    throw new FormatException("Thời lượng phải là số!");
-                }
-                if (!m_Exception.IsError)
-                {
+            
                     phim.DaoDien = tb_DaoDien.Text;
                     phim.DienVien = tb_DienVien.Text;
                     phim.TenPhim = tb_TenPhim.Text;
@@ -91,23 +109,18 @@ namespace ETN_Cinema
                     phim.NoiDung = tb_NoiDung.Text;
                     phim.NuocSanXuat = tb_NuocSanXuat.Text;
                     phim.TuoiQuyDinh = int.Parse(tb_DoTuoiQuyDinh.Text);
-                    if (filmPosterURI != null)
-                    {
-                        CreatePoster(filmPosterURI);
-                    }
-                    else
-                    {
-                        throw new Exception("Chưa nhập Poster Phim");
-                    }
+                  
+                    CreatePoster(filmPosterURI);
+                   
                     phim_bul.Insert(phim);
-                    MessageBox.Show("Nhap thanh cong");
+                    MessageBox.Show("Nhập thành công");
                     this.Close();
                 }
-            }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Xin vui lòng nhập lại chính xác thông tin phim");
             }
+          
         }
 
         private void CreatePoster(Uri _uri)
@@ -137,8 +150,15 @@ namespace ETN_Cinema
             if (result != null)
             {
                 fileLink = dlg.FileName;
-                filmPosterURI = new Uri(fileLink);
-                img_Poster.Source = new BitmapImage(filmPosterURI);
+                try
+                {
+                    filmPosterURI = new Uri(fileLink);
+                    img_Poster.Source = new BitmapImage(filmPosterURI);
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng chọn file ảnh");
+                }
             }
             ////tempImage.Source = new BitmapImage(uri);
             ////if (tempImage.Source.Height > 800)
