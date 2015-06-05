@@ -47,7 +47,6 @@
     <Compile Include="KhachHang_Pub.cs" />
     <Compile Include="KhuyenMai_Pub.cs" />
     <Compile Include="LoaiKhachHang_Pub.cs" />
-    <Compile Include="LoaiSuatChieu_Pub.cs" />
     <Compile Include="NhanVien_Pub.cs" />
     <Compile Include="PhieuDatVe_Pub.cs" />
     <Compile Include="Phim_Pub.cs" />

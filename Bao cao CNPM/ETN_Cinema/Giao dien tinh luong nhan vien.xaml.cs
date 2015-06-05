@@ -105,7 +105,6 @@ namespace ETN_Cinema
 
             //_LnhanvienPub = _nhanvienBUL.GetNVTheoPB(_maPB);
             //cbb_MaNV.ItemsSource = _LnhanvienPub;
-
             if (cbb_MaPB.SelectedIndex != null)
             {
                 _LnhanvienPub = _nhanvienBUL.GetNVTheoPB(_maPB);
@@ -126,7 +125,6 @@ namespace ETN_Cinema
             lbNgayLuongGanNhat.Content = "";
 
             lbLuong.Content = "";
-            //img_HinhAnh.Source = new BitmapImage(new Uri(@"C:\Users\Tran Danh\Desktop\ETN_Cinema\ETN_Cinema\bin\Debug\image\" + "default.png"));
             img_HinhAnh.Source = null;
             cbb_MaNV.SelectedIndex = -1;
         }
@@ -143,7 +141,6 @@ namespace ETN_Cinema
             if (cbb_MaNV.SelectedValue != null)
             {
             _phongbanPub = _phongbanBUL.GetPBTheoMaPB(cbb_MaPB.SelectedValue.ToString());
-
             _nhanvienPub = _nhanvienBUL.GetNV(cbb_MaNV.SelectedValue.ToString());
             img_HinhAnh.Source = GetHinhAnhTuPoster(_nhanvienPub.HinhAnh);
 
@@ -155,7 +152,6 @@ namespace ETN_Cinema
 
             //int mCoutDay = (DateTime.Parse(DateTime.Now.ToShortDateString()) -  DateTime.Parse(_nhanvienPub.MocLuong.ToShortDateString())).Days;
             //lbLuong.Content = Danhdaucham((mCoutDay * VarGlobal.mLCB * _phongbanPub.HeSL).ToString());
-
             //img_HinhAnh.Source = new BitmapImage(new Uri(@"C:\Users\Tran Danh\Desktop\ETN_Cinema\ETN_Cinema\bin\Debug\image\" + _nhanvienPub.HinhAnh));
             
             

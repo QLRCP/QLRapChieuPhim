@@ -17,7 +17,7 @@ namespace DAL
         protected SqlCommand command;
 
         //public string ConnectionString = @"Data Source=emthichhocit94;Initial Catalog=RAPCHIEUPHIM;Integrated Security=True";
-        public string ConnectionString = @"Data Source=SPACE\SQLEXPRESS;Initial Catalog=QLRAPCHIEUPHIM;Integrated Security=True";
+        public string ConnectionString = @"Data Source=DURANDAL;Initial Catalog=QLRCP;Integrated Security=True";
 
         public void connect()
         {
