@@ -36,6 +36,7 @@ namespace DAL
             {
                 PhongChieu_Pub _PC = new PhongChieu_Pub();
                 _PC.TenPC = reader["TenPC"].ToString();
+                _PC.MaPC = reader["MaPC"].ToString();
                 _LPhongChieu.Add(_PC);
             }
             reader.Close();

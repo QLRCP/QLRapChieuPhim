@@ -35,7 +35,7 @@ namespace ETN_Cinema
             LvebanPUB = new List<VeBan_Pub>();
 
             List<Phim_Pub> List_Phim = new List<Phim_Pub>();
-            List<string> List_LoaiSC = new List<string>();
+            List<LoaiSuatChieu_Pub> List_LoaiSC = new List<LoaiSuatChieu_Pub>();
 
             Phim_BUL phim_BUL = new Phim_BUL();
             SuatChieu_BUL SuatChieu_BUL = new SuatChieu_BUL();
@@ -48,7 +48,7 @@ namespace ETN_Cinema
                 {
                     List<VeBan_Pub> temp = new List<VeBan_Pub>();
                     VeBan_BUL veban_BUL = new VeBan_BUL();
-                    temp = veban_BUL.GetVeTuLoaiSCvaTenPhim(List_LoaiSC[j], List_Phim[i].TenPhim);
+                    temp = veban_BUL.GetVeTuLoaiSCvaTenPhim(List_LoaiSC[j].ID, List_Phim[i].TenPhim);
 
                     DoanhSoBanVe_Pub doanhsobanve_PUB = new DoanhSoBanVe_Pub();
                     DoanhSoBanVe_BUL doanhsobanve_BUL = new DoanhSoBanVe_BUL();
@@ -64,7 +64,7 @@ namespace ETN_Cinema
                     }
 
                     doanhsobanve_PUB.TenPhim = List_Phim[i].TenPhim;
-                    doanhsobanve_PUB.LoaiSC = List_LoaiSC[j];
+                    doanhsobanve_PUB.LoaiSC = List_LoaiSC[j].ID;
                     doanhsobanve_PUB.SoLuong = m_SoLuong;
                     doanhsobanve_PUB.DoanhSo = m_DoanhSo;
 

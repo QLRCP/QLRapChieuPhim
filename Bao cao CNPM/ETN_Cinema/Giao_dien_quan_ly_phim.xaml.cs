@@ -26,7 +26,7 @@ namespace ETN_Cinema
 
         private void mn_NhapPhim_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow _gdnp = new MainWindow();
+          MainWindow _gdnp = new MainWindow();
             _gdnp.ShowDialog();
         }
 
@@ -34,6 +34,18 @@ namespace ETN_Cinema
         {
             Giao_dien_sua_thong_tin_phim _gdsttp = new Giao_dien_sua_thong_tin_phim();
             _gdsttp.ShowDialog();
+        }
+
+        private void mn_NhapSuatChieu_Click(object sender, RoutedEventArgs e)
+        {
+            Giao_dien_mo_suat_chieu _gdmsc = new Giao_dien_mo_suat_chieu();
+            _gdmsc.ShowDialog();
+        }
+
+        private void mn_SuaSuatChieu_Click(object sender, RoutedEventArgs e)
+        {
+            Giao_dien_sua_suat_chieu _gdssc = new Giao_dien_sua_suat_chieu();
+            _gdssc.ShowDialog();
         }
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="KhachHang_BUL.cs" />
     <Compile Include="KhuyenMai_BUL.cs" />
     <Compile Include="LoaiKhachHang_BUL.cs" />
+    <Compile Include="LoaiSuatChieu_BUL.cs" />
     <Compile Include="NhanVien_BUL.cs" />
     <Compile Include="PhieuDatVe_BUL.cs" />
     <Compile Include="Phim_BUL.cs" />

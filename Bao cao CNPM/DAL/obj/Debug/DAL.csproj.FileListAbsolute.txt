@@ -33,3 +33,10 @@ F:\My courses\QLRapChieuPhim\Bao cao CNPM\DAL\bin\Debug\PUBLIC.pdb
 F:\My courses\QLRapChieuPhim\Bao cao CNPM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\My courses\QLRapChieuPhim\Bao cao CNPM\DAL\obj\Debug\DAL.dll
 F:\My courses\QLRapChieuPhim\Bao cao CNPM\DAL\obj\Debug\DAL.pdb
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\bin\Debug\DAL.dll
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\bin\Debug\DAL.pdb
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\bin\Debug\PUBLIC.dll
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\bin\Debug\PUBLIC.pdb
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\obj\Debug\DAL.dll
+E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\DAL\obj\Debug\DAL.pdb

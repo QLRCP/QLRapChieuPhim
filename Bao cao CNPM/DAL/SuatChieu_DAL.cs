@@ -20,7 +20,7 @@ namespace DAL
         public void Insert(SuatChieu_Pub _info)
         {
             _info.MaSC = GetMa("SC", GetIndex_DAL.GetIndexSuatChieu());
-            string insertCommand = @"INSERT INTO SUATCHIEU(MaSC, GioChieu, NgayChieu, PhongChieu, LoaiSuatChieu, TenPhim, Gia) VALUES('" +
+            string insertCommand = @"INSERT INTO SUATCHIEU(MaSC, GioChieu, NgayChieu, MAPC, ID, MAPHIM, Gia) VALUES('" +
                 _info.MaSC + "', '" +
                 _info.GioChieu.ToShortTimeString() + "', '" + 
                 _info.NgayChieu.ToShortDateString() + "', '" +
@@ -32,7 +32,7 @@ namespace DAL
             m_sqlConnect.executeNonQuery(insertCommand);
 
             GetIndex_DAL.SetIndexSuatChieu(GetIndex_DAL.GetIndexSuatChieu() + 1);
-            for (int i = 65; i < 75; i++)
+           /* for (int i = 65; i < 75; i++)
             {
                 for (int j = 1; j < 11; j++)
                 {
@@ -41,7 +41,7 @@ namespace DAL
                     m_sqlConnect.executeNonQuery(insertChairCommand);
                     GetIndex_DAL.SetIndexGhe(GetIndex_DAL.GetIndexGhe() + 1);
                 }
-            }
+            }*/
         }
 
         public List<SuatChieu_Pub> GetSuatChieuTheoTenPhim(string _TenPhim)
@@ -87,12 +87,18 @@ namespace DAL
             return _LSuatChieu;
         }
 
-        public List<string> GetLoaiSC()
+        public List<LoaiSuatChieu_Pub> GetLoaiSC()
         {
-            List<string> _LLoaiSC = new List<string>();
-            _LLoaiSC.Add("3D");
-            _LLoaiSC.Add("2D");
-            return _LLoaiSC;
+            List<LoaiSuatChieu_Pub> _LLoaiSuatChieu = new List<LoaiSuatChieu_Pub>();
+            SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQuery("GetLoaiSuatChieu");
+
+            while (reader.Read())
+            {
+                LoaiSuatChieu_Pub _LSC = new LoaiSuatChieu_Pub();
+                _LSC.ID = reader["ID"].ToString();
+                _LLoaiSuatChieu.Add(_LSC);
+            }
+            return _LLoaiSuatChieu;
         }
 
         public void Update(SuatChieu_Pub _info_update)
