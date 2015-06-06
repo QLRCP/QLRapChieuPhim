@@ -131,9 +131,10 @@ namespace DAL
 
             while (reader.Read())
             {
+                result.MaPhim = reader["MaPhim"].ToString();
                 result.TenPhim = reader["TenPhim"].ToString();
                 result.Poster = reader["Poster"].ToString();
-                result.TheLoai = reader["TheLoai"].ToString();
+                result.TheLoai = reader["MaLP"].ToString();
                 result.NoiDung = reader["NoiDung"].ToString();
                 result.NuocSanXuat = reader["NuocSanXuat"].ToString();
                 result.ThoiLuong = int.Parse(reader["ThoiLuong"].ToString());

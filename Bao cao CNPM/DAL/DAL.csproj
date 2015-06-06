@@ -48,6 +48,7 @@
     <Compile Include="KhachHang_DAL.cs" />
     <Compile Include="KhuyenMai_DAL.cs" />
     <Compile Include="LoaiKhachHang_DAL.cs" />
+    <Compile Include="LoaiSuatChieu_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="PhieuDatVe_DAL.cs" />
     <Compile Include="Phim_DAL.cs" />

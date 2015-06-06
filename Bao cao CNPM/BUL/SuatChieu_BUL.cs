@@ -40,7 +40,7 @@ namespace BUL
             cls.Update(_info_update);
         }
 
-        public List<string> GetLoaiSC()
+        public List<LoaiSuatChieu_Pub> GetLoaiSC()
         {
             return cls.GetLoaiSC();
         }
