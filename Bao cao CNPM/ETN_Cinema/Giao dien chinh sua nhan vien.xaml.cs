@@ -82,7 +82,7 @@ namespace ETN_Cinema
         }
 
 
-        private CheckNhap _checkNhap = new CheckNhap();
+        private CheckNhapNV _checkNhap = new CheckNhapNV();
 
         private void KT_Nhap()
         {

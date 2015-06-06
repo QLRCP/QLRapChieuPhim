@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Giao diện nhập phim" Height="486.25" Width="994" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid Background="Black" Margin="0,0,0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="603*"/>
+            <ColumnDefinition Width="385*"/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="lb_TenNhanVien" Content="Nhân viên nhập phiếu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
         <Label x:Name="lb_TenPhim" Content="Tên Phim" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0" Foreground="#FFF98800" FontWeight="Bold"/>
         <Label x:Name="lb_NoiDung" Content="Nội dung" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
@@ -21,10 +25,10 @@
         <TextBox x:Name="tb_DoTuoiQuyDinh" HorizontalAlignment="Left" Height="23" Margin="161,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346"/>
         <DatePicker x:Name="datepicker_NgayKhoiChieu" HorizontalAlignment="Left" Margin="161,228,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btn_Submit" Content="Submit" HorizontalAlignment="Left" Margin="432,401,0,0" VerticalAlignment="Top" Width="75" Click="btn_Submit_Click"/>
-        <Image x:Name="img_Poster" HorizontalAlignment="Left" Height="301" Margin="766,76,0,0" VerticalAlignment="Top" Width="192"/>
-        <Button x:Name="btn_ChonAnh" Content="Chọn Ảnh" HorizontalAlignment="Left" Margin="826,45,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.021,-1.172" Click="btn_ChonAnh_Click"/>
-        <Label x:Name="lb_Poster" Content="Poster" HorizontalAlignment="Left" Margin="624,45,0,0" VerticalAlignment="Top" Width="97"/>
-        <TextBlock x:Name="tb_LinkAnh" HorizontalAlignment="Left" Margin="826,408,0,0" TextWrapping="Wrap" Text="Picture's link" VerticalAlignment="Top" Width="128" RenderTransformOrigin="1.805,3.133"/>
+        <Image x:Name="img_Poster" HorizontalAlignment="Left" Height="301" Margin="163,76,0,0" VerticalAlignment="Top" Width="192" Grid.Column="1"/>
+        <Button x:Name="btn_ChonAnh" Content="Chọn Ảnh" HorizontalAlignment="Left" Margin="223,45,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.021,-1.172" Click="btn_ChonAnh_Click" Grid.Column="1"/>
+        <Label x:Name="lb_Poster" Content="Poster" HorizontalAlignment="Left" Margin="21,45,0,0" VerticalAlignment="Top" Width="97" Grid.Column="1"/>
+        <TextBlock x:Name="tb_LinkAnh" HorizontalAlignment="Left" Margin="223,408,0,0" TextWrapping="Wrap" Text="Picture's link" VerticalAlignment="Top" Width="128" RenderTransformOrigin="1.805,3.133" Grid.Column="1"/>
         <Label x:Name="lb_MaNV" Content="Label" HorizontalAlignment="Left" Height="26" Margin="161,10,0,0" VerticalAlignment="Top" Width="119" Foreground="#FFF98800" FontWeight="Bold"/>
         <Label x:Name="lb_TenNV" Content="Label" HorizontalAlignment="Left" Height="26" Margin="298,10,0,0" VerticalAlignment="Top" Width="209" Foreground="#FFF98800" FontWeight="Bold"/>
         <Label x:Name="lb_TheLoai" Content="Thể loại" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
@@ -32,15 +36,26 @@
         <Label x:Name="lb_NamPhatHanh" Content="Năm phát hành" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
         <TextBox x:Name="tb_NamPhatHanh" HorizontalAlignment="Left" Height="23" Margin="161,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346"/>
 
-        <Label x:Name="warning_Label2" Content=" " HorizontalAlignment="Left" Margin="525,107,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"></Label>
-        <Label x:Name="warning_Label1" Content=" " HorizontalAlignment="Left" Margin="525,46,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label3" Content=" " HorizontalAlignment="Left" Margin="525,138,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label4" Content=" " HorizontalAlignment="Left" Margin="525,168,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label5" Content=" " HorizontalAlignment="Left" Margin="525,199,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label6" Content=" " HorizontalAlignment="Left" Margin="525,269,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label7" Content=" " HorizontalAlignment="Left" Margin="525,310,0,0" VerticalAlignment="Top" Width="330" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label8" Content=" " HorizontalAlignment="Left" Margin="525,354,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="warning_Label9" Content=" " HorizontalAlignment="Left" Margin="787,403,0,0" VerticalAlignment="Top" Width="167" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label2" Content=" " HorizontalAlignment="Left" Margin="538,107,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"></Label>
+        <Label x:Name="warning_Label1" Content=" " HorizontalAlignment="Left" Margin="538,46,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label3" Content=" " HorizontalAlignment="Left" Margin="538,138,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label4" Content=" " HorizontalAlignment="Left" Margin="538,168,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label5" Content=" " HorizontalAlignment="Left" Margin="538,199,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label6" Content=" " HorizontalAlignment="Left" Margin="538,269,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label7" Content=" " HorizontalAlignment="Left" Margin="538,310,0,0" VerticalAlignment="Top" Width="317" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label8" Content=" " HorizontalAlignment="Left" Margin="538,354,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="warning_Label9" Content=" " HorizontalAlignment="Left" Margin="184,403,0,0" VerticalAlignment="Top" Width="167" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
 
+        <Image x:Name="warning_Tenphim" HorizontalAlignment="Left" Height="22" Margin="511,49,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Noidung" HorizontalAlignment="Left" Height="22" Margin="511,108,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Thoiluong" HorizontalAlignment="Left" Height="22" Margin="511,139,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Dienvien" HorizontalAlignment="Left" Height="22" Margin="511,168,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Daodien" HorizontalAlignment="Left" Height="22" Margin="511,199,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Nuocsx" HorizontalAlignment="Left" Height="22" Margin="511,269,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Tuoi" HorizontalAlignment="Left" Height="22" Margin="511,310,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Namphathanh" HorizontalAlignment="Left" Height="22" Margin="511,354,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Poster" HorizontalAlignment="Left" Height="22" Margin="333,376,0,0" VerticalAlignment="Top" Width="22" Grid.Column="1" RenderTransformOrigin="0.727,4.727"/>
+        <Label x:Name="warning_Label10" Content=" " HorizontalAlignment="Left" Margin="315,76,0,0" VerticalAlignment="Top" Width="441" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Image x:Name="warning_Theloai" HorizontalAlignment="Left" Height="22" Margin="286,76,0,0" VerticalAlignment="Top" Width="22"/>
     </Grid>
 </Window>
