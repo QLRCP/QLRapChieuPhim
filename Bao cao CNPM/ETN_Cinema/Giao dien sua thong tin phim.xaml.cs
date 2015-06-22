@@ -41,13 +41,11 @@ namespace ETN_Cinema
             phim_Tatca.TenLP = "Tất cả";
             phim_Tatca.MaLP = "";
             LtlPUB.Add(phim_Tatca);
-            cb_TheLoai.ItemsSource = LtlPUB;
-            cb_TheLoai.DisplayMemberPath = "TenLP";
-            cb_TheLoai.SelectedValuePath = "TenLP";
+ 
             cb_XuatTheLoai.ItemsSource = LtlPUB;
             cb_XuatTheLoai.DisplayMemberPath = "TenLP";
             cb_XuatTheLoai.SelectedValuePath = "TenLP";
-            cb_TheLoai.SelectedItem = LtlPUB[LtlPUB.Count - 1];
+            cb_XuatTheLoai.SelectedItem = LtlPUB[LtlPUB.Count - 1];
             ManageInput(false);
             //btn_ChonAnh.Visibility = System.Windows.Visibility.Hidden;
         }
@@ -154,7 +152,7 @@ namespace ETN_Cinema
         private void cb_TheLoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<Phim_Pub> m_ListFilm;
-            string TheLoai = cb_TheLoai.SelectedValue.ToString();
+            string TheLoai = cb_XuatTheLoai.SelectedValue.ToString();
             cb_MaPhim.ItemsSource = null;
             ManageLabelXuat(true);
             ManageInput(false);
