@@ -15,7 +15,7 @@
         <ComboBox x:Name="cb_Minute" HorizontalAlignment="Left" Margin="204,102,0,0" VerticalAlignment="Top" Width="60"/>
         <Label x:Name="lb_TenPhim" Content="Tên Phim" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
         <ComboBox x:Name="cb_TenPhongChieu" HorizontalAlignment="Left" Margin="139,164,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cb_LoaiSuatChieu" HorizontalAlignment="Left" Margin="139,195,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox x:Name="cb_LoaiSuatChieu" HorizontalAlignment="Left" Margin="139,195,0,0" VerticalAlignment="Top" Width="60" SelectionChanged="cb_LoaiSuatChieu_SelectionChanged"/>
         <ComboBox x:Name="cb_TenPhim" HorizontalAlignment="Left" Margin="139,37,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lb_MaSC" Content="Mã Suất Chiếu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
         <ComboBox x:Name="cb_MaSC" HorizontalAlignment="Left" Margin="139,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cb_MaSC_SelectionChanged"/>

@@ -35,16 +35,15 @@ namespace ETN_Cinema
             cb_MaPhim.ItemsSource = LphimPUB;
             cb_MaPhim.DisplayMemberPath = "MaPhim";
             cb_MaPhim.SelectedValuePath = "MaPhim";
+            cb_TenPhim.ItemsSource = LphimPUB;
+            cb_TenPhim.DisplayMemberPath = "TenPhim";
+            cb_TenPhim.SelectedValuePath = "MaPhim";
             TheLoaiPhim_BUL tl_bul = new TheLoaiPhim_BUL();
             LtlPUB = tl_bul.GetTheLoai();
-            TheLoaiPhim_Pub phim_Tatca = new TheLoaiPhim_Pub();
-            phim_Tatca.TenLP = "Tất cả";
-            phim_Tatca.MaLP = "";
-            LtlPUB.Add(phim_Tatca);
  
             cb_XuatTheLoai.ItemsSource = LtlPUB;
             cb_XuatTheLoai.DisplayMemberPath = "TenLP";
-            cb_XuatTheLoai.SelectedValuePath = "TenLP";
+            cb_XuatTheLoai.SelectedValuePath = "MaLP";
             cb_XuatTheLoai.SelectedItem = LtlPUB[LtlPUB.Count - 1];
             ManageInput(false);
             //btn_ChonAnh.Visibility = System.Windows.Visibility.Hidden;
@@ -52,6 +51,10 @@ namespace ETN_Cinema
 
         private void cb_MaPhim_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (cb_TenPhim.SelectedIndex != cb_MaPhim.SelectedIndex)
+                cb_TenPhim.SelectedIndex = cb_MaPhim.SelectedIndex;
+            
+
             string _MaPhim = "";
             if (cb_MaPhim.SelectedValue != null)
             {
@@ -73,7 +76,7 @@ namespace ETN_Cinema
                 lb_XuatDaoDien.Text = _tempPhim.DaoDien;
                 lb_XuatDienVien.Text = _tempPhim.DienVien;
                 //lb_XuatNamPhatHanh.Content = _tempPhim.NamPhatHanh.Year;
-                cb_XuatTheLoai.SelectedItem = XuatTheLoaiChoComboBox(_tempPhim.TheLoai);
+                cb_XuatTheLoai.SelectedValue = _tempPhim.TheLoai;
                 datepicker_NgayKhoiChieu.SelectedDate = _tempPhim.NgayChieu;
                 lb_XuatNamPhatHanh.Text = _tempPhim.NamPhatHanh.ToString();
                 //lb_XuatNgayKhoiChieu.Content = _tempPhim.NgayChieu.ToShortDateString();
@@ -99,20 +102,13 @@ namespace ETN_Cinema
             return bImg;
         }
 
-        private TheLoaiPhim_Pub XuatTheLoaiChoComboBox(string _TheLoai)
-        {
-            for (int i = 0; i < LtlPUB.Count; i++)
-            {
-                if (LtlPUB[i].TenLP == _TheLoai)
-                {
-                    return LtlPUB[i];
-                }
-            }
-            return null;
-        }
+
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
+            KT_NhapPhim();
+            if (_checkNhap._warningMsg == "")
+            {
             Phim_Pub phim_pub = new Phim_Pub();
             Phim_BUL phim_bul = new Phim_BUL();
 
@@ -130,10 +126,17 @@ namespace ETN_Cinema
             phim_pub.Poster = m_Poster;
             if (filmPosterURI != null)
             {
-                UpdatePoster(filmPosterURI, m_Poster); 
+                UpdatePoster(filmPosterURI, m_Poster);
             }
+
             phim_bul.Update(phim_pub);
             MessageBox.Show("Thay đổi thành công");
+            }
+            else
+            {
+                MessageBox.Show("Xin vui lòng xem lại chính xác thông tin phim");
+            }
+
         }
 
         private void UpdatePoster(Uri _uri, string _Index)
@@ -156,22 +159,11 @@ namespace ETN_Cinema
             cb_MaPhim.ItemsSource = null;
             ManageLabelXuat(true);
             ManageInput(false);
-            if (TheLoai != "Tất cả")
-            {
-                Phim_BUL phim_bul = new Phim_BUL();
-                m_ListFilm = phim_bul.GetMaPhimTheoTheLoai(TheLoai);
-                cb_MaPhim.ItemsSource = m_ListFilm;
-                cb_MaPhim.DisplayMemberPath = "MaPhim";
-                cb_MaPhim.SelectedValuePath = "MaPhim";
-            }
-            else
-            {
-                Phim_BUL phim_bul = new Phim_BUL();
-                LphimPUB = phim_bul.GetMaPhim();
-                cb_MaPhim.ItemsSource = LphimPUB;
-                cb_MaPhim.DisplayMemberPath = "MaPhim";
-                cb_MaPhim.SelectedValuePath = "MaPhim";
-            }
+            Phim_BUL phim_bul = new Phim_BUL();
+            m_ListFilm = phim_bul.GetMaPhimTheoTheLoai(TheLoai);
+            cb_MaPhim.ItemsSource = m_ListFilm;
+            cb_MaPhim.DisplayMemberPath = "MaPhim";
+            cb_MaPhim.SelectedValuePath = "MaPhim";
         }
 
         private void btn_ChonAnh_Click(object sender, RoutedEventArgs e)
@@ -248,5 +240,49 @@ namespace ETN_Cinema
                 lb_XuatTenPhim.Visibility = System.Windows.Visibility.Hidden;
             }
         }
+
+        private void cb_TenPhim_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+                   if (cb_MaPhim.SelectedIndex != cb_TenPhim.SelectedIndex)            
+            cb_MaPhim.SelectedIndex = cb_TenPhim.SelectedIndex;
+        }
+        private CheckNhapPhim _checkNhap = new CheckNhapPhim();
+        private void KT_NhapPhim()
+        {
+            _checkNhap.Check_Nhap(lb_XuatTenPhim, cb_XuatTheLoai, lb_XuatNoiDung, lb_XuatThoiLuong, lb_XuatDienVien, lb_XuatDaoDien, lb_XuatNuocSanXuat, lb_XuatDoTuoiQuyDinh, lb_XuatNamPhatHanh, filmPosterURI);
+
+            warning_Tenphim.Source = _checkNhap._ten._checkImage;
+            warning_Theloai.Source = _checkNhap._theloai._checkImage;
+            warning_Noidung.Source = _checkNhap._noidung._checkImage;
+            warning_Thoiluong.Source = _checkNhap._thoiluong._checkImage;
+            warning_Dienvien.Source = _checkNhap._dienvien._checkImage;
+            warning_Daodien.Source = _checkNhap._daodien._checkImage;
+            warning_Nuocsx.Source = _checkNhap._nuocsx._checkImage;
+            warning_Tuoi.Source = _checkNhap._tuoiquydinh._checkImage;
+            warning_Namphathanh.Source = _checkNhap._namphathanh._checkImage;
+            warning_Poster.Source = _checkNhap._poster._passIcon;
+
+            _checkNhap._poster._warningMsg = null;
+
+            warning_Label1.Content = _checkNhap._ten._warningMsg;
+            warning_Label10.Content = _checkNhap._theloai._warningMsg;
+            warning_Label2.Content = _checkNhap._noidung._warningMsg;
+            warning_Label3.Content = _checkNhap._thoiluong._warningMsg;
+            warning_Label4.Content = _checkNhap._dienvien._warningMsg;
+            warning_Label5.Content = _checkNhap._daodien._warningMsg;
+            warning_Label6.Content = _checkNhap._nuocsx._warningMsg;
+            warning_Label7.Content = _checkNhap._tuoiquydinh._warningMsg;
+            warning_Label8.Content = _checkNhap._namphathanh._warningMsg;
+            warning_Label9.Content = _checkNhap._poster._warningMsg;
+
+            _checkNhap._warningMsg = _checkNhap._ten._warningMsg + _checkNhap._theloai._warningMsg + _checkNhap._noidung._warningMsg + _checkNhap._thoiluong._warningMsg +
+                _checkNhap._dienvien._warningMsg + _checkNhap._daodien._warningMsg
+     + _checkNhap._nuocsx._warningMsg +
+           _checkNhap._tuoiquydinh._warningMsg +
+            _checkNhap._namphathanh._warningMsg +
+             _checkNhap._poster._warningMsg;
+
+        }
+
     }
 }

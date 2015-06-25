@@ -25,10 +25,36 @@
         <ComboBox x:Name="cb_MaPhim" HorizontalAlignment="Left" Margin="130,77,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cb_MaPhim_SelectionChanged"/>
         <Label x:Name="lb_MaPhim" Content="Mã Phim" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
         <Label x:Name="lb_xuatTheLoai" Content="Thể Loại" HorizontalAlignment="Left" Margin="10,387,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
-        <Button x:Name="btn_Submit" Content="Submit" HorizontalAlignment="Left" Margin="496,439,0,0" VerticalAlignment="Top" Width="75" Click="btn_Submit_Click"/>
+        <Button x:Name="btn_Submit" Content="Sửa" HorizontalAlignment="Left" Margin="496,439,0,0" VerticalAlignment="Top" Width="75" Click="btn_Submit_Click"/>
         <DatePicker x:Name="datepicker_NgayKhoiChieu" HorizontalAlignment="Left" Margin="130,263,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_XuatTheLoai" HorizontalAlignment="Left" Margin="130,387,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cb_XuatTheLoai" HorizontalAlignment="Left" Margin="130,387,0,0" VerticalAlignment="Top" Width="225" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="btn_ChonAnh" Content="Chọn Ảnh" HorizontalAlignment="Left" Margin="859,15,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.021,-1.172" Click="btn_ChonAnh_Click"/>
         <TextBox x:Name="lb_XuatNamPhatHanh" Text="" HorizontalAlignment="Left" Margin="130,294,0,0" VerticalAlignment="Top" Width="261"/>
+        <Label x:Name="lb_Ten_Phim" Content="Tên Phim" HorizontalAlignment="Left" Margin="293,77,0,0" VerticalAlignment="Top" Foreground="#FFF98800" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_TenPhim" HorizontalAlignment="Left" Margin="370,77,0,0" VerticalAlignment="Top" Width="201" SelectionChanged="cb_TenPhim_SelectionChanged"/>
+
+
+        <Label x:Name="warning_Label2" Content=" " HorizontalAlignment="Left" Margin="428,170,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label1" Content=" " HorizontalAlignment="Left" Margin="428,109,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label3" Content=" " HorizontalAlignment="Left" Margin="428,201,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label4" Content=" " HorizontalAlignment="Left" Margin="428,231,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label5" Content=" " HorizontalAlignment="Left" Margin="428,262,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label6" Content=" " HorizontalAlignment="Left" Margin="428,332,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label7" Content=" " HorizontalAlignment="Left" Margin="428,373,0,0" VerticalAlignment="Top" Width="317" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label8" Content=" " HorizontalAlignment="Left" Margin="428,417,0,0" VerticalAlignment="Top" Width="218" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label9" Content=" " HorizontalAlignment="Left" Margin="750,387,0,0" VerticalAlignment="Top" Width="208" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="warning_Label10" Content=" " HorizontalAlignment="Left" Margin="205,139,0,0" VerticalAlignment="Top" Width="441" FontWeight="Bold" Foreground="#FFF98800" Height="25" RenderTransformOrigin="0.5,0.5"/>
+
+        <Image x:Name="warning_Tenphim" HorizontalAlignment="Left" Height="22" Margin="396,109,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Noidung" HorizontalAlignment="Left" Height="22" Margin="396,140,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Thoiluong" HorizontalAlignment="Left" Height="22" Margin="396,175,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Dienvien" HorizontalAlignment="Left" Height="22" Margin="396,206,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Daodien" HorizontalAlignment="Left" Height="22" Margin="401,231,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Nuocsx" HorizontalAlignment="Left" Height="22" Margin="401,325,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Tuoi" HorizontalAlignment="Left" Height="22" Margin="401,356,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.591,0.409"/>
+        <Image x:Name="warning_Namphathanh" HorizontalAlignment="Left" Height="22" Margin="401,294,0,0" VerticalAlignment="Top" Width="22"/>
+        <Image x:Name="warning_Poster" HorizontalAlignment="Left" Height="22" Margin="975,387,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.727,4.727"/>
+
+        <Image x:Name="warning_Theloai" HorizontalAlignment="Left" Height="22" Margin="369,387,0,0" VerticalAlignment="Top" Width="22"/>
     </Grid>
 </Window>

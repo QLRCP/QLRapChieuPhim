@@ -24,6 +24,7 @@ namespace ETN_Cinema
         List<SuatChieu_Pub> LsuatchieuPub;
         List<Phim_Pub> LphimPUB;
         List<PhongChieu_Pub> LpcPUB;
+        List<LoaiSuatChieu_Pub> LlscPUB;
         string m_MaSC;
         public Giao_dien_sua_suat_chieu()
         {
@@ -43,8 +44,13 @@ namespace ETN_Cinema
             {
                 cb_Minute.Items.Add((i * 15).ToString());
             }
-            cb_LoaiSuatChieu.Items.Add("2D");
-            cb_LoaiSuatChieu.Items.Add("3D");
+
+            LoaiSuatChieu_BUL lsc_bul = new LoaiSuatChieu_BUL();
+            LlscPUB = lsc_bul.GetLoaiSuatChieu();
+            cb_LoaiSuatChieu.ItemsSource = LlscPUB;
+            cb_LoaiSuatChieu.DisplayMemberPath = "ID";
+            cb_LoaiSuatChieu.SelectedValuePath = "ID";
+
             Phim_BUL phim_bul = new Phim_BUL();
             PhongChieu_BUL pc_bul = new PhongChieu_BUL();
 
@@ -52,12 +58,15 @@ namespace ETN_Cinema
             LpcPUB = pc_bul.GetPhongChieu();
 
             cb_TenPhongChieu.ItemsSource = LpcPUB;
-            cb_TenPhongChieu.DisplayMemberPath = "TenPC";
-            cb_TenPhongChieu.SelectedValuePath = "TenPC";
+            cb_TenPhongChieu.DisplayMemberPath = "MaPC";
+            cb_TenPhongChieu.SelectedValuePath = "MaPC";
 
             cb_TenPhim.ItemsSource = LphimPUB;
             cb_TenPhim.DisplayMemberPath = "TenPhim";
-            cb_TenPhim.SelectedValuePath = "TenPhim";
+            cb_TenPhim.SelectedValuePath = "MaPhim";
+
+           
+
         }
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
@@ -65,14 +74,18 @@ namespace ETN_Cinema
             SuatChieu_BUL sc_bul = new SuatChieu_BUL();
             SuatChieu_Pub sc_pub = new SuatChieu_Pub();
 
-            sc_pub.GioChieu = new DateTime(1, 1, 1, int.Parse(cb_Hour.Text), int.Parse(cb_Minute.Text), 0);
-            sc_pub.NgayChieu = datePicker_NgayChieu.SelectedDate.Value;
-            sc_pub.LoaiSuatChieu = cb_LoaiSuatChieu.Text;
-            sc_pub.TenPhim = cb_TenPhim.Text;
-            sc_pub.PhongChieu = cb_TenPhongChieu.Text;
-            sc_pub.Gia = float.Parse(tb_GiaVe.Text);
-            sc_pub.MaSC = m_MaSC;
-            sc_bul.Update(sc_pub);
+                sc_pub.GioChieu = new DateTime(1, 1, 1, int.Parse(cb_Hour.Text), int.Parse(cb_Minute.Text), 0);
+      //          sc_pub.GioChieu = new DateTime(1, 1, 1,1,1, 0);
+                sc_pub.NgayChieu = datePicker_NgayChieu.SelectedDate.Value;
+                sc_pub.LoaiSuatChieu = cb_LoaiSuatChieu.Text;
+                sc_pub.TenPhim = cb_TenPhim.SelectedValue.ToString();
+                sc_pub.PhongChieu = cb_TenPhongChieu.Text;
+                sc_pub.Gia = float.Parse(tb_GiaVe.Text);
+                sc_pub.MaSC = m_MaSC;
+                sc_bul.Update(sc_pub);
+
+                MessageBox.Show("Thay đổi thành công");
+
         }
 
         private void cb_MaSC_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -87,11 +100,16 @@ namespace ETN_Cinema
             SuatChieu_Pub sc_PUB = sc_BUL.GetSuatChieuTheoMaSC(_MaSC);
             tb_GiaVe.Text = sc_PUB.Gia.ToString();
             datePicker_NgayChieu.SelectedDate = sc_PUB.NgayChieu;
-            cb_Hour.Text = sc_PUB.GioChieu.Hour.ToString();
-            cb_Minute.Text = sc_PUB.GioChieu.Minute.ToString();
-            cb_TenPhim.Text = sc_PUB.TenPhim;
-            cb_TenPhongChieu.Text = sc_PUB.PhongChieu;
-            cb_LoaiSuatChieu.Text = sc_PUB.LoaiSuatChieu;
+            cb_Hour.SelectedValue = sc_PUB.GioChieu.Hour.ToString();
+            cb_Minute.SelectedValue = sc_PUB.GioChieu.Minute.ToString();
+            cb_TenPhim.SelectedValue = sc_PUB.TenPhim;
+            cb_TenPhongChieu.SelectedValue = sc_PUB.PhongChieu;
+            cb_LoaiSuatChieu.SelectedValue = sc_PUB.LoaiSuatChieu;
+        }
+
+        private void cb_LoaiSuatChieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

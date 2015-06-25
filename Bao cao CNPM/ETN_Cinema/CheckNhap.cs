@@ -83,8 +83,8 @@ namespace ETN_Cinema
 
     class CheckNhapTB
     {
-        private BitmapImage _warningIcon;
-        private BitmapImage _passIcon;
+        public BitmapImage _warningIcon;
+        public BitmapImage _passIcon;
         public BitmapImage _checkImage;
         public string _warningMsg;
 
@@ -155,7 +155,7 @@ namespace ETN_Cinema
                 warning(mess+" không được để trống");
             }
             else
-                if (!_is_have_Number(tb.Text.ToString()))
+                if (!IsNumber(tb.Text.ToString()))
                 {
                     warning(mess+" chỉ được chứa ký tự số");
                 }

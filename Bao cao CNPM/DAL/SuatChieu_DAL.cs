@@ -79,9 +79,9 @@ namespace DAL
                 _SC.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
                 _SC.MaSC = reader["MaSC"].ToString();
                 _SC.NgayChieu = DateTime.Parse(reader["NgayChieu"].ToString());
-                _SC.PhongChieu = reader["PhongChieu"].ToString();
-                _SC.TenPhim = reader["TenPhim"].ToString();
-                _SC.LoaiSuatChieu = reader["LoaiSuatChieu"].ToString();
+                _SC.PhongChieu = reader["MAPC"].ToString();
+                _SC.TenPhim = reader["MAPHIM"].ToString();
+                _SC.LoaiSuatChieu = reader["ID"].ToString();
                 _LSuatChieu.Add(_SC);
             }
             return _LSuatChieu;
@@ -106,9 +106,9 @@ namespace DAL
             string updateCommand = @"UPDATE SUATCHIEU SET " + 
                 "GioChieu = '" + _info_update.GioChieu.ToShortTimeString() + "', " + 
                 "NgayChieu = '" + _info_update.NgayChieu.ToShortDateString() + "', " +
-                "Phongchieu = '" + _info_update.PhongChieu.ToString() + "', " + 
-                "LoaisuatChieu = '" + _info_update.LoaiSuatChieu.ToString()  + "', " + 
-                "TenPhim = N'" + _info_update.TenPhim.ToString() + "', " + 
+                "MAPC = '" + _info_update.PhongChieu.ToString() + "', " + 
+                "ID = '" + _info_update.LoaiSuatChieu.ToString()  + "', " + 
+                "MAPHIM = '" + _info_update.TenPhim.ToString() + "', " + 
                 "Gia = '" + _info_update.Gia.ToString() + "' WHERE MaSC = '" + _info_update.MaSC.ToString() + "'";
             m_sqlConnect.executeNonQuery(updateCommand);
         }
@@ -126,9 +126,9 @@ namespace DAL
                 result.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
                 result.MaSC = reader["MaSC"].ToString();
                 result.NgayChieu = DateTime.Parse(reader["NgayChieu"].ToString());
-                result.PhongChieu = reader["PhongChieu"].ToString();
-                result.TenPhim = reader["TenPhim"].ToString();
-                result.LoaiSuatChieu = reader["LoaiSuatChieu"].ToString();
+                result.PhongChieu = reader["MAPC"].ToString();
+                result.TenPhim = reader["MAPHIM"].ToString();
+                result.LoaiSuatChieu = reader["ID"].ToString();
             }
 
             return result;
