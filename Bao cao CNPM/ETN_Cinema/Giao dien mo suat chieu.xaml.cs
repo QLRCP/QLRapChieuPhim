@@ -62,15 +62,22 @@ namespace ETN_Cinema
         {
             SuatChieu_BUL sc_bul = new SuatChieu_BUL();
             SuatChieu_Pub sc_pub = new SuatChieu_Pub();
-
-            sc_pub.GioChieu = new DateTime(1, 1, 1, int.Parse(cb_Hour.Text), int.Parse(cb_Minute.Text), 0);
-            sc_pub.NgayChieu = datePicker_NgayChieu.SelectedDate.Value;
-            sc_pub.LoaiSuatChieu = cb_LoaiSuatChieu.SelectedValue.ToString();
-            sc_pub.TenPhim = cb_MaPhim.SelectedValue.ToString();
-            sc_pub.PhongChieu = cb_TenPhongChieu.SelectedValue.ToString();
-            sc_pub.Gia = float.Parse(tb_GiaVe.Text.ToString());
-
-            sc_bul.Insert(sc_pub);
+            try
+            {
+                sc_pub.GioChieu = new DateTime(1, 1, 1, int.Parse(cb_Hour.Text), int.Parse(cb_Minute.Text), 0);
+                sc_pub.NgayChieu = datePicker_NgayChieu.SelectedDate.Value;
+                sc_pub.LoaiSuatChieu = cb_LoaiSuatChieu.SelectedValue.ToString();
+                sc_pub.TenPhim = cb_MaPhim.SelectedValue.ToString();
+                sc_pub.PhongChieu = cb_TenPhongChieu.SelectedValue.ToString();
+                sc_pub.Gia = float.Parse(tb_GiaVe.Text.ToString());
+                sc_bul.Insert(sc_pub);
+                MessageBox.Show("Thay đổi thành công");
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Có gì đó không ổn");
+            }
         }
 
         private void cb_MaPhim_SelectionChanged(object sender, SelectionChangedEventArgs e)
