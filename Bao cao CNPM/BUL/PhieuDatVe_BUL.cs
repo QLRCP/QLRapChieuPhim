@@ -35,9 +35,5 @@ namespace BUL
         {
             cls.Update(_info_update);
         }
-        public List<PhieuDatVe_Pub> GetMaPDVTheoVeBan( string _MaPhim, string _MaSC)
-        {
-            return cls.GetPDVTheoVeBan(_MaPhim,_MaSC);
-        }
     }
 }

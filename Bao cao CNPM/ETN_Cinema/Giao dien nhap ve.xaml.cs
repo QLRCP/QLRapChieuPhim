@@ -11,8 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BUL;
-using PUBLIC;
 
 namespace ETN_Cinema
 {
@@ -21,16 +19,9 @@ namespace ETN_Cinema
     /// </summary>
     public partial class Giao_dien_nhap_ve : Window
     {
-        Giao_dien_dang_nhap _dangnhap = new Giao_dien_dang_nhap();
-       // List<Phim_Pub> _listPhim;
-       // List<SuatChieu_Pub> _listSuatChieu;
-        //List<Ghe_Pub> _listGhe;
-        //List<PhongChieu_Pub> _listPhongChieu;
-
         public Giao_dien_nhap_ve()
         {
             InitializeComponent();
-
         }
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
