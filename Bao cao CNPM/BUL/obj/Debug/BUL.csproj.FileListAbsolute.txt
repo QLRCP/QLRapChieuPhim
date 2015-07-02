@@ -52,3 +52,12 @@ E:\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\PUBLIC.pdb
 E:\QLRapChieuPhim.git\Bao cao CNPM\BUL\obj\Debug\BUL.csprojResolveAssemblyReference.cache
 E:\QLRapChieuPhim.git\Bao cao CNPM\BUL\obj\Debug\BUL.dll
 E:\QLRapChieuPhim.git\Bao cao CNPM\BUL\obj\Debug\BUL.pdb
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\BUL.dll
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\BUL.pdb
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\DAL.dll
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\PUBLIC.dll
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\DAL.pdb
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\PUBLIC.pdb
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.csprojResolveAssemblyReference.cache
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.dll
+E:\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.pdb

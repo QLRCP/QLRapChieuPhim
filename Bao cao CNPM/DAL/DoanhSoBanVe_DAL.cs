@@ -28,12 +28,14 @@ namespace DAL
         {
             _info.SoTT = GetIndex_DAL.GetSTT();
 
-            string insertCommand = @"INSERT INTO DOANHSOBANVE(STT, TenPhim, LoaiSC, SoLuong, DoanhSo) VALUES (' " + 
-                _info.SoTT.ToString() + "', N' " + 
-                _info.TenPhim.ToString() + "', '" +
-                _info.LoaiSC.ToString() + "', '" +
-                _info.SoLuong.ToString() + "', '" +
-                _info.DoanhSo.ToString() + "')";
+
+            string insertCommand = @"INSERT INTO  DOANHSOBANVE(STT, MAPHIM, LOAISC, SOLUONG, DOANHSO) VALUES('" +
+                _info.SoTT + "', '" +
+                _info.TenPhim + "', '" +
+                _info.LoaiSC + "', '" +
+                _info.SoLuong + "', '" +
+                _info.DoanhSo + "')";
+
             m_sqlConnect.executeNonQuery(insertCommand);
 
             GetIndex_DAL.SetSTT(GetIndex_DAL.GetSTT() + 1);

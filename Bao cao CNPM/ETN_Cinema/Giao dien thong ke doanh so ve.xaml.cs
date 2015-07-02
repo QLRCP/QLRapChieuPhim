@@ -48,7 +48,7 @@ namespace ETN_Cinema
                 {
                     List<VeBan_Pub> temp = new List<VeBan_Pub>();
                     VeBan_BUL veban_BUL = new VeBan_BUL();
-                    temp = veban_BUL.GetVeTuLoaiSCvaTenPhim(List_LoaiSC[j].ID, List_Phim[i].TenPhim);
+                    temp = veban_BUL.GetVeTuLoaiSCvaTenPhim(List_LoaiSC[j].ID, List_Phim[i].MaPhim);
 
                     DoanhSoBanVe_Pub doanhsobanve_PUB = new DoanhSoBanVe_Pub();
                     DoanhSoBanVe_BUL doanhsobanve_BUL = new DoanhSoBanVe_BUL();
@@ -63,7 +63,7 @@ namespace ETN_Cinema
                         m_TongDoanhSo += temp[k].GiaVe;
                     }
 
-                    doanhsobanve_PUB.TenPhim = List_Phim[i].TenPhim;
+                    doanhsobanve_PUB.TenPhim = List_Phim[i].MaPhim;
                     doanhsobanve_PUB.LoaiSC = List_LoaiSC[j].ID;
                     doanhsobanve_PUB.SoLuong = m_SoLuong;
                     doanhsobanve_PUB.DoanhSo = m_DoanhSo;
@@ -104,6 +104,6 @@ namespace ETN_Cinema
             DoanhsoAdapters.Fill(dataset.DOANHSOBANVE);
 
             _reportViewer.RefreshReport();
-        } 
+        }
     }
 }

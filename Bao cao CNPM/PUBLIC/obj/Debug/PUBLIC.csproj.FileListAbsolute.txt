@@ -28,3 +28,8 @@ E:\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.pdb
 E:\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.csprojResolveAssemblyReference.cache
 E:\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.dll
 E:\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.pdb
+E:\QLRapChieuPhim\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.dll
+E:\QLRapChieuPhim\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.pdb
+E:\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.csprojResolveAssemblyReference.cache
+E:\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.dll
+E:\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.pdb
