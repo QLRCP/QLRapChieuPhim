@@ -78,6 +78,10 @@ namespace ETN_Cinema
             cb_GioChieu.ItemsSource = LGioChieu;
             cb_NgayChieu.ItemsSource = null;
             cb_LoaiSuatChieu.Text = "";
+            cb_PhongChieu.Text = "";
+            cb_GioChieu.Text = "";
+            cb_LoaiSuatChieu.Text = "";
+            
 
         }
 
@@ -128,10 +132,7 @@ namespace ETN_Cinema
             cb_NgayChieu.Text = "";
             cb_PhongChieu.Text = "";
             cb_GioChieu.Text = "";
-            Lphieudatve = pdv_BUL.GetMaPDVTheoVeBan(cb_TenPhim.SelectedValue.ToString(), LsuatchieuPUB[0].MaSC);
-            //cb_PhieuDatVe.ItemsSource = Lphieudatve;
-            //cb_PhieuDatVe.DisplayMemberPath = "MaPDV";
-            //cb_PhieuDatVe.SelectedValuePath = "MaPDV";
+           
         }
 
         private void btn_Next_Click(object sender, RoutedEventArgs e)
@@ -147,7 +148,7 @@ namespace ETN_Cinema
             VarGlobal.g_VeBanPub.GiaVe = LsuatchieuPUB[0].Gia;
             VarGlobal.g_VeBanPub.NgayChieu = LsuatchieuPUB[0].NgayChieu;
             VarGlobal.g_VeBanPub.PhongChieu = cb_PhongChieu.Text;
-            VarGlobal.g_VeBanPub.TenPhim = phim_bul.GetPhimTheoMaPhim(cb_TenPhim.Text.ToString()).TenPhim;
+            VarGlobal.g_VeBanPub.TenPhim = phim_bul.GetPhimTheoMaPhim(cb_TenPhim.Text.ToString()).MaPhim;
 
             VarGlobal.g_VeBanPub.MaNV = tb_MaNhanVien.Text;
             g_SuatChieu = LsuatchieuPUB[0].MaSC;
@@ -155,5 +156,7 @@ namespace ETN_Cinema
             this.Close();
             _gdcg.ShowDialog();
         }
+
+   
     }
 }
