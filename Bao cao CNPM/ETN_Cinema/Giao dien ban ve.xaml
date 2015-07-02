@@ -16,7 +16,5 @@
         <Button x:Name="btn_Next" Content="Next" HorizontalAlignment="Left" Margin="291,237,0,0" VerticalAlignment="Top" Width="75" Click="btn_Next_Click"/>
         <Label x:Name="lb_MaNhanVien" Content="Mã Nhân Viên" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
         <TextBox x:Name="tb_MaNhanVien" HorizontalAlignment="Left" Height="23" Margin="108,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cb_PhieuDatVe" HorizontalAlignment="Left" Margin="108,223,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lb_MaPhieuDatVe" Content="Mã Phiếu Đặt Vé" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
     </Grid>
 </Window>

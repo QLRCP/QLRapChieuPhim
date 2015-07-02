@@ -103,7 +103,7 @@ namespace DAL
         {
             float m_HeSo = 0;
             List<SqlParameter> Lparameter = new List<SqlParameter>();
-            Lparameter.Add(new SqlParameter("@_TenLoaiKH", _TenLoaiKH));
+            Lparameter.Add(new SqlParameter("@_MaLoaiKH", _TenLoaiKH));
             Lparameter.Add(new SqlParameter("@_MaKM", _MaKM));
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetHeSoKMTuMaKMVaLoaiKH", Lparameter);
 
