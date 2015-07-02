@@ -80,7 +80,7 @@ namespace ETN_Cinema
 
         private void checkBox_Nu_Checked(object sender, RoutedEventArgs e)
         {
-            if(checkBox_Nu.IsChecked == true)
+            if (checkBox_Nu.IsChecked == true)
                 checkBox_Nam.IsChecked = false;
         }
 
@@ -116,8 +116,8 @@ namespace ETN_Cinema
         {
             NhanVien_Pub _nhanvienPub = new NhanVien_Pub();
             NhanVien_BUL _nhanvienBUL = new NhanVien_BUL();
-            KT_Nhap();            
-            if(_checkNhap._warningMsg=="")
+            KT_Nhap();
+            if (_checkNhap._warningMsg == "")
             {
                 NhanVien_Pub _nhanvienPubTemp = new NhanVien_Pub();
                 _nhanvienPubTemp = _nhanvienBUL.GetNV(cbb_MaNV.SelectedValue.ToString());
@@ -161,7 +161,7 @@ namespace ETN_Cinema
                 this.Close();
 
             }
-        else
+            else
             {
                 MessageBox.Show("Xin vui lòng khiểm tra lại thông tin đã nhập");
             }
@@ -186,67 +186,81 @@ namespace ETN_Cinema
 
         private void cbb_MaPB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string _maPB = null ;
-            if (cbb_MaPB.SelectedValue.ToString() != null)
+            try
             {
-                _maPB = cbb_MaPB.SelectedValue.ToString();
-
-                List<NhanVien_Pub> _LnhanvienPub = new List<NhanVien_Pub>();
-                NhanVien_BUL _nhanvienBUL = new NhanVien_BUL();
-
-                if (cbb_MaPB.SelectedIndex != 0)
+                //check phân quyền
+                if ((VarGlobal.g_NhanVienPub.MaCV.ToString() != "CV0001") && (cbb_MaPB.SelectedValue.ToString() == "PB0001"))
                 {
-                    _LnhanvienPub = _nhanvienBUL.GetNVTheoPB(_maPB);
-                    cbb_MaNV.ItemsSource = _LnhanvienPub;
-                    cbb_TenNV.ItemsSource = _LnhanvienPub; //combobox 2
+                    cbb_MaPB.SelectedIndex = 1;
+                    MessageBox.Show("Chỉ có Trưởng phòng nhân sự mới được quyền chỉnh sửa nhân viên thuộc phòng nhân sự");
                 }
                 else
                 {
-                    _LnhanvienPub = _nhanvienBUL.GetNVTheoPB("PB0001");
-                    cbb_MaNV.ItemsSource = _LnhanvienPub;
-                    cbb_TenNV.ItemsSource = _LnhanvienPub; //
+                    string _maPB = null;
+                    if (cbb_MaPB.SelectedValue.ToString() != null)
+                    {
+                        _maPB = cbb_MaPB.SelectedValue.ToString();
+
+                        List<NhanVien_Pub> _LnhanvienPub = new List<NhanVien_Pub>();
+                        NhanVien_BUL _nhanvienBUL = new NhanVien_BUL();
+
+                        if (cbb_MaPB.SelectedIndex != 0)
+                        {
+                            _LnhanvienPub = _nhanvienBUL.GetNVTheoPB(_maPB);
+                            cbb_MaNV.ItemsSource = _LnhanvienPub;
+                            cbb_TenNV.ItemsSource = _LnhanvienPub; //combobox 2
+                        }
+                        else
+                        {
+                            _LnhanvienPub = _nhanvienBUL.GetNVTheoPB("PB0001");
+                            cbb_MaNV.ItemsSource = _LnhanvienPub;
+                            cbb_TenNV.ItemsSource = _LnhanvienPub; //
+                        }
+                        cbb_MaNV.DisplayMemberPath = "MaNV";                //hiển thị tên lên Combobox
+                        cbb_MaNV.SelectedValuePath = "MaNV";
+
+                        cbb_TenNV.DisplayMemberPath = "HoTen";                //hiển thị tên lên Combobox
+                        cbb_TenNV.SelectedValuePath = "MaNV";
+
+                        if ((cbb_MaNV.SelectedIndex == -1) || (cbb_TenNV.SelectedIndex == -1))
+                        {
+                            tb_TenNhanVien.Text = "";
+                            datePicker_NamSinh.Text = "";
+
+                            tb_SoDienThoai.Text = "";
+                            tb_Email.Text = "";
+                            tb_QueQuan.Text = "";
+                            tb_DiaChi.Text = "";
+                            tb_CMND.Text = "";
+                            cbb_ChucVu.SelectedIndex = -1;
+                            datePicker_NgayVaoLam.Text = "";
+
+                            #region.Reset gioitinh
+                            checkBox_Nam.IsChecked = false;
+                            checkBox_Nu.IsChecked = false;
+
+                            cbb_MaNV.SelectedIndex = 0;
+                            cbb_TenNV.SelectedIndex = 0;
+                        }
+
+                    }
+                            #endregion
+
                 }
-                cbb_MaNV.DisplayMemberPath = "MaNV";                //hiển thị tên lên Combobox
-                cbb_MaNV.SelectedValuePath = "MaNV";
-
-                cbb_TenNV.DisplayMemberPath = "HoTen";                //hiển thị tên lên Combobox
-                cbb_TenNV.SelectedValuePath = "MaNV";
-
-                if ((cbb_MaNV.SelectedIndex == -1) || (cbb_TenNV.SelectedIndex == -1))
-                {
-                    tb_TenNhanVien.Text = "";
-                    datePicker_NamSinh.Text = "";
-
-                    tb_SoDienThoai.Text = "";
-                    tb_Email.Text = "";
-                    tb_QueQuan.Text = "";
-                    tb_DiaChi.Text = "";
-                    tb_CMND.Text = "";
-                    cbb_ChucVu.SelectedIndex = -1;
-                    datePicker_NgayVaoLam.Text = "";
-
-                    #region.Reset gioitinh
-                    checkBox_Nam.IsChecked = false;
-                    checkBox_Nu.IsChecked = false;
-
-                    cbb_MaNV.SelectedIndex = 0;
-                    cbb_TenNV.SelectedIndex = 0;
-                }
-                
             }
-            #endregion
+            catch
+            { }
+
         }
 
-        private void cbb_MaPB_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
+
 
         private void cbb_MaNV_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
             if (cbb_TenNV.SelectedIndex != cbb_MaNV.SelectedIndex)
             {
-                 cbb_TenNV.SelectedIndex=cbb_MaNV.SelectedIndex;
+                cbb_TenNV.SelectedIndex = cbb_MaNV.SelectedIndex;
             }
 
             #region.Reset gioitinh
@@ -256,8 +270,8 @@ namespace ETN_Cinema
 
             NhanVien_Pub _nhanvienPub = new NhanVien_Pub();
             NhanVien_BUL _nhanvienBUL = new NhanVien_BUL();
-            
-            if(cbb_MaNV.SelectedValue != null)
+
+            if (cbb_MaNV.SelectedValue != null)
             {
                 this.btn_Submit.IsEnabled = true;
                 this.btn_ChonAnh.IsEnabled = true;
@@ -302,10 +316,7 @@ namespace ETN_Cinema
             }
         }
 
-        private void cbb_ChucVu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
 
         private void DeleteNV(object sender, RoutedEventArgs e)
         {
@@ -332,12 +343,26 @@ namespace ETN_Cinema
 
         private void cbb_TenNV_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-             if (cbb_TenNV.SelectedIndex!=cbb_MaNV.SelectedIndex)
-             {
-                 cbb_MaNV.SelectedIndex = cbb_TenNV.SelectedIndex;
-             }
+            if (cbb_TenNV.SelectedIndex != cbb_MaNV.SelectedIndex)
+            {
+                cbb_MaNV.SelectedIndex = cbb_TenNV.SelectedIndex;
+            }
         }
 
 
+        private void cbb_MaPB_Copy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                //check phân quyền
+                if ((VarGlobal.g_NhanVienPub.MaCV.ToString() != "CV0001") && (cbb_PhongBan.SelectedValue.ToString() == "PB0001"))
+                {
+                    cbb_PhongBan.SelectedIndex = 1;
+                    MessageBox.Show("Chỉ có Trưởng phòng nhân sự mới được quyền bổ nhiệm nhân viên mới vào phòng nhân sự");
+                }
+            }
+            catch
+            { }
+        }
     }
 }

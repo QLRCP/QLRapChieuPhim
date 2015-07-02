@@ -25,7 +25,7 @@ namespace ETN_Cinema
     {
         MyException m_Exception;
         int _index;
-        
+
         FileStream stream;
         List<ChucVu_Pub> _LchucvuPub = new List<ChucVu_Pub>();
         List<PhongBan_Pub> _LphongbanPub = new List<PhongBan_Pub>();
@@ -34,22 +34,22 @@ namespace ETN_Cinema
         public Giao_dien_nhap_nhan_vien()
         {
             InitializeComponent();
-/*            m_Exception = new MyException();
-            m_Exception.AddDateTimePicker(datePicker_NgaySinh, lb_NgayThangNamSinh);
-            m_Exception.AddDateTimePicker(datePicker_NgayVaoLam, lb_NgayVaoLam);
-            m_Exception.AddTextBox(tb_TenNhanVien, lb_TenNhanVien);
-            m_Exception.AddTextBox(tb_SoDienThoai, lb_SoDienThoai);
-            m_Exception.AddTextBox(tb_QueQuan, lb_QueQuan);
-            //m_Exception.AddTextBox(tb_PhongBan, lb_PhongBan);
-            //m_Exception.AddTextBox(tb_NguoiQuanLy, lb_NguoiQuanLy);
-            m_Exception.AddTextBox(tb_Email, lb_Email);
-            m_Exception.AddTextBox(tb_DiaChi, lb_DiaChi);
-            m_Exception.AddTextBox(tb_CMND, lb_CMND);
-            //m_Exception.AddTextBox(tb_ChucVu, lb_ChucVu);
-            //m_Exception.AddCheckbox(checkBox_Nam, lb_GioiTinh);
-            //m_Exception.AddCheckbox(checkBox_Nu, lb_GioiTinh);
-            m_Exception.AddImage(img_AnhNhanVien, lb_AnhNhanVien);
- */
+            /*            m_Exception = new MyException();
+                        m_Exception.AddDateTimePicker(datePicker_NgaySinh, lb_NgayThangNamSinh);
+                        m_Exception.AddDateTimePicker(datePicker_NgayVaoLam, lb_NgayVaoLam);
+                        m_Exception.AddTextBox(tb_TenNhanVien, lb_TenNhanVien);
+                        m_Exception.AddTextBox(tb_SoDienThoai, lb_SoDienThoai);
+                        m_Exception.AddTextBox(tb_QueQuan, lb_QueQuan);
+                        //m_Exception.AddTextBox(tb_PhongBan, lb_PhongBan);
+                        //m_Exception.AddTextBox(tb_NguoiQuanLy, lb_NguoiQuanLy);
+                        m_Exception.AddTextBox(tb_Email, lb_Email);
+                        m_Exception.AddTextBox(tb_DiaChi, lb_DiaChi);
+                        m_Exception.AddTextBox(tb_CMND, lb_CMND);
+                        //m_Exception.AddTextBox(tb_ChucVu, lb_ChucVu);
+                        //m_Exception.AddCheckbox(checkBox_Nam, lb_GioiTinh);
+                        //m_Exception.AddCheckbox(checkBox_Nu, lb_GioiTinh);
+                        m_Exception.AddImage(img_AnhNhanVien, lb_AnhNhanVien);
+             */
             _index = GetIndex_BUL.GetIndex();
 
             datePicker_NgaySinh.SelectedDate = DateTime.Now.AddYears(-20);
@@ -60,6 +60,7 @@ namespace ETN_Cinema
             cmb_ChucVu.ItemsSource = _LchucvuPub;
             cmb_ChucVu.DisplayMemberPath = "TenCV";
             cmb_ChucVu.SelectedValuePath = "MaCV";
+
 
 
             PhongBan_BUL _phongbanBUL = new PhongBan_BUL();
@@ -75,9 +76,9 @@ namespace ETN_Cinema
         }
 
         private CheckNhapNV _checkNhap = new CheckNhapNV();
-      
+
         private void KT_Nhap()
-        {            
+        {
             _checkNhap.Check_Nhap(tb_TenNhanVien, tb_SoDienThoai, tb_Email, tb_QueQuan, tb_DiaChi, tb_CMND, cmb_ChucVu, cmb_PhongBan, tb_LinkAnh);
 
             warning_Hoten.Source = _checkNhap._hoten._checkImage;
@@ -89,15 +90,15 @@ namespace ETN_Cinema
             warning_CV.Source = _checkNhap._cv._checkImage;
             warning_PB.Source = _checkNhap._pb._checkImage;
             warning_Image.Source = _checkNhap._ava._checkImage;
-                warning_Label9.Content = _checkNhap._ava._warningMsg;
-                warning_Label1.Content = _checkNhap._hoten._warningMsg;                    
-                warning_Label2.Content = _checkNhap._sdt._warningMsg;                     
-                warning_Label3.Content = _checkNhap._email._warningMsg;           
-                warning_Label4.Content = _checkNhap._quequan._warningMsg;
-                warning_Label5.Content = _checkNhap._diachi._warningMsg;          
-                warning_Label6.Content = _checkNhap._cmnd._warningMsg;                      
-                warning_Label7.Content = _checkNhap._cv._warningMsg;           
-                warning_Label8.Content = _checkNhap._pb._warningMsg;                    
+            warning_Label9.Content = _checkNhap._ava._warningMsg;
+            warning_Label1.Content = _checkNhap._hoten._warningMsg;
+            warning_Label2.Content = _checkNhap._sdt._warningMsg;
+            warning_Label3.Content = _checkNhap._email._warningMsg;
+            warning_Label4.Content = _checkNhap._quequan._warningMsg;
+            warning_Label5.Content = _checkNhap._diachi._warningMsg;
+            warning_Label6.Content = _checkNhap._cmnd._warningMsg;
+            warning_Label7.Content = _checkNhap._cv._warningMsg;
+            warning_Label8.Content = _checkNhap._pb._warningMsg;
 
         }
 
@@ -109,10 +110,10 @@ namespace ETN_Cinema
             NhanVien_BUL _nhanvieBul = new NhanVien_BUL();
 
             KT_Nhap();
- //           CheckNhapTB _check=new CheckNhapTB();
-  //          _check.check_Hoten(tb_TenNhanVien);
-  //          MessageBox.Show(_check._warningMsg);
-  //          warning_Hoten.Source = _check._checkImage;
+            //           CheckNhapTB _check=new CheckNhapTB();
+            //          _check.check_Hoten(tb_TenNhanVien);
+            //          MessageBox.Show(_check._warningMsg);
+            //          warning_Hoten.Source = _check._checkImage;
 
 
             try
@@ -144,15 +145,15 @@ namespace ETN_Cinema
                 this.Close();
 
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ và chính xác thông tin");
             }
 
 
-                
-            
-            
+
+
+
         }
 
 
@@ -172,7 +173,7 @@ namespace ETN_Cinema
 
         private void btn_ChonAnh_Click(object sender, RoutedEventArgs e)
         {
-             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             // Set filter for file extension and default file extension 
 
             dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|GIF Files (*.gif)|*.gif";
@@ -184,24 +185,24 @@ namespace ETN_Cinema
 
 
             // Get the selected file name and display in a TextBox 
-                if (result == true)
-                {
-                    filename = dlg.FileName;
-                    var uri = new Uri(filename);
-                    //save hình
-                     stream = new FileStream("../Debug/Image/" + (_index + 1)  + ".png", FileMode.Create);
-                    PngBitmapEncoder encoder = new PngBitmapEncoder();
-                    //TextBlock myTextBlock = new TextBlock();
-                    //myTextBlock.Text = "Codec Author is: " + encoder.CodecInfo.Author.ToString();
-                    encoder.Interlace = PngInterlaceOption.On;
-                    encoder.Frames.Add(BitmapFrame.Create(uri));
-                    encoder.Save(stream);
-                    stream.Flush();
-                    stream.Close();
-                    filename = stream.Name;
-                    img_AnhNhanVien.Source = new BitmapImage(new Uri(dlg.FileName.ToString()));
-                    tb_LinkAnh.Text = (_index + 1).ToString() + ".png";
-                }
+            if (result == true)
+            {
+                filename = dlg.FileName;
+                var uri = new Uri(filename);
+                //save hình
+                stream = new FileStream("../Debug/Image/" + (_index + 1) + ".png", FileMode.Create);
+                PngBitmapEncoder encoder = new PngBitmapEncoder();
+                //TextBlock myTextBlock = new TextBlock();
+                //myTextBlock.Text = "Codec Author is: " + encoder.CodecInfo.Author.ToString();
+                encoder.Interlace = PngInterlaceOption.On;
+                encoder.Frames.Add(BitmapFrame.Create(uri));
+                encoder.Save(stream);
+                stream.Flush();
+                stream.Close();
+                filename = stream.Name;
+                img_AnhNhanVien.Source = new BitmapImage(new Uri(dlg.FileName.ToString()));
+                tb_LinkAnh.Text = (_index + 1).ToString() + ".png";
+            }
         }
 
         private void tb_QueQuan_TextChanged(object sender, TextChangedEventArgs e)
@@ -209,14 +210,20 @@ namespace ETN_Cinema
 
         }
 
-        private void cmb_ChucVu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void cmb_PhongBan_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            try
+            {
+                //check phân quyền
+                if ((VarGlobal.g_NhanVienPub.MaCV.ToString() != "CV0001") && (cmb_PhongBan.SelectedValue.ToString() == "PB0001"))
+                {
+                    cmb_PhongBan.SelectedIndex = 1;
+                    MessageBox.Show("Chỉ có Trưởng phòng nhân sự mới được quyền thêm nhân viên mới cho phòng nhân sự");
+                }
+            }
+            catch
+            { }
         }
 
         private BitmapImage GetHinhAnhTuPoster(string _Poster)
@@ -237,9 +244,9 @@ namespace ETN_Cinema
         }
 
 
-        
 
 
-       
+
+
     }
 }
