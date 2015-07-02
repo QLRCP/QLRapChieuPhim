@@ -18,3 +18,8 @@ E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.pdb
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.csprojResolveAssemblyReference.cache
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.dll
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.pdb
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.dll
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\bin\Debug\PUBLIC.pdb
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.csprojResolveAssemblyReference.cache
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.dll
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\PUBLIC\obj\Debug\PUBLIC.pdb

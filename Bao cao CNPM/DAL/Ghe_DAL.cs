@@ -20,7 +20,7 @@ namespace DAL
         public void Update(Ghe_Pub _info)
         {
             string updateCommand = "UPDATE GHE " +
-                        "SET Trong = '" + _info.Trong + "'"+
+                        "SET Trong = '" + _info.Trong + "'" +
                         " WHERE MaGhe = '" + _info.MaGhe.ToString() + "' AND MaSC = '" + _info.MaSC.ToString() + "'";
 
             m_sqlConnect.executeNonQuery(updateCommand);
@@ -36,7 +36,7 @@ namespace DAL
             while (reader.Read())
             {
                 Ghe_Pub ghe_pub = new Ghe_Pub();
-                ghe_pub.Id = int.Parse(reader["Id"].ToString());
+                //  ghe_pub.Id = int.Parse(reader["Id"].ToString());
                 ghe_pub.Trong = bool.Parse(reader["Trong"].ToString());
                 ghe_pub.MaGhe = reader["MaGhe"].ToString();
                 ghe_pub.MaSC = reader["MaSC"].ToString();

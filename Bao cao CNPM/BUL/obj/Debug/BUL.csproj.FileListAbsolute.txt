@@ -34,3 +34,12 @@ E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\PUBLIC.pdb
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.csprojResolveAssemblyReference.cache
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.dll
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.pdb
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\BUL.dll
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\BUL.pdb
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\DAL.dll
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\PUBLIC.dll
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\DAL.pdb
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\bin\Debug\PUBLIC.pdb
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\obj\Debug\BUL.csprojResolveAssemblyReference.cache
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\obj\Debug\BUL.dll
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\BUL\obj\Debug\BUL.pdb
