@@ -28,12 +28,12 @@
         <Button x:Name="btn_Submit" Content="Nhập Nhân Viên" HorizontalAlignment="Left" Margin="556,447,0,0" VerticalAlignment="Top" Width="102" Click="btn_Submit_Click" Height="29"/>
         <CheckBox x:Name="checkBox_Nam" Content="Nam" IsChecked="True" HorizontalAlignment="Left" Margin="157,119,0,0" VerticalAlignment="Top" Checked="checkBox_Nam_Checked" Foreground="#FFF98800" FontWeight="Bold" Height="17" Width="47"/>
         <CheckBox x:Name="checkBox_Nu" Content="Nữ" HorizontalAlignment="Left" Margin="337,119,0,0" VerticalAlignment="Top" Checked="checkBox_Nu_Checked" Foreground="#FFF98800" FontWeight="Bold" Height="17" Width="37"/>
-        <Image x:Name="img_AnhNhanVien" HorizontalAlignment="Left" Height="113" Margin="10,113,0,0" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <Image x:Name="img_AnhNhanVien" HorizontalAlignment="Left" Height="282" Margin="0,113,0,0" VerticalAlignment="Top" Width="198" Grid.Column="1"/>
         <Button x:Name="btn_ChonAnh" Content="Chọn Ảnh" HorizontalAlignment="Left" Margin="36,52,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.021,-1.172" Click="btn_ChonAnh_Click" Grid.Column="1" Height="20"/>
         <Label x:Name="lb_AnhNhanVien" Content="Ảnh nhân viên" HorizontalAlignment="Left" Margin="25,79,0,0" VerticalAlignment="Top" Width="97" FontWeight="Bold" Foreground="#FFF98800" Height="29" Grid.Column="1"/>
         <TextBlock x:Name="tb_LinkAnh" HorizontalAlignment="Left" Margin="593,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="18" Grid.ColumnSpan="2"/>
         <DatePicker x:Name="datePicker_NgaySinh" HorizontalAlignment="Left" Margin="142,86,0,0" VerticalAlignment="Top" Height="26" Width="102"/>
-        <ComboBox x:Name="cmb_ChucVu" HorizontalAlignment="Left" Margin="142,325,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_ChucVu_SelectionChanged" Height="23"/>
+        <ComboBox x:Name="cmb_ChucVu" HorizontalAlignment="Left" Margin="142,325,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
         <ComboBox x:Name="cmb_PhongBan" HorizontalAlignment="Left" Margin="142,358,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmb_PhongBan_SelectionChanged" Height="23"/>
         <Label x:Name="lb_MaNV" Content="Mã nhân viên" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.093,7.075" Margin="10,13,0,0" FontWeight="Bold" Foreground="#FFF98800" Height="26" Width="86"/>
         <TextBox x:Name="tb_MaNV" HorizontalAlignment="Left" Height="23" Margin="142,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

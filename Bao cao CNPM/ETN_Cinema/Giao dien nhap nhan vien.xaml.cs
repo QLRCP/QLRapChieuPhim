@@ -62,6 +62,7 @@ namespace ETN_Cinema
             cmb_ChucVu.SelectedValuePath = "MaCV";
 
 
+                       
             PhongBan_BUL _phongbanBUL = new PhongBan_BUL();
 
             _LphongbanPub = _phongbanBUL.GetPB();
@@ -209,14 +210,20 @@ namespace ETN_Cinema
 
         }
 
-        private void cmb_ChucVu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void cmb_PhongBan_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            try
+            {
+                //check phân quyền
+                if ((VarGlobal.g_NhanVienPub.MaCV.ToString() != "CV0001") && (cmb_PhongBan.SelectedValue.ToString() == "PB0001"))
+                {
+                    cmb_PhongBan.SelectedIndex = 1;
+                    MessageBox.Show("Chỉ có Trưởng phòng nhân sự mới được quyền thêm nhân viên mới cho phòng nhân sự");
+                }
+            }
+            catch
+            { }
         }
 
         private BitmapImage GetHinhAnhTuPoster(string _Poster)

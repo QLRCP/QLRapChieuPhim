@@ -35,7 +35,7 @@
         <ComboBox x:Name ="cbb_MaPB"  HorizontalAlignment="Left" Margin="142,43,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbb_MaPB_SelectionChanged"/>
         <ComboBox x:Name ="cbb_MaNV"  HorizontalAlignment="Left" Margin="142,74,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbb_MaNV_SelectionChanged"/>
         <ComboBox x:Name ="cbb_PhongBan"  HorizontalAlignment="Left" Margin="142,427,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbb_MaPB_Copy_SelectionChanged"/>
-        <ComboBox x:Name ="cbb_ChucVu" HorizontalAlignment="Left" Margin="142,396,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbb_ChucVu_SelectionChanged"/>
+        <ComboBox x:Name ="cbb_ChucVu" HorizontalAlignment="Left" Margin="142,396,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Xóa Nhân Viên" HorizontalAlignment="Left" Margin="557,516,0,0" VerticalAlignment="Top" Width="87" Click="DeleteNV" Height="30"/>
         <Image x:Name="warning_Hoten" HorizontalAlignment="Left" Height="22" Margin="523,144,0,0" VerticalAlignment="Top" Width="22"/>
         <Image x:Name="warning_Sdt" HorizontalAlignment="Left" Height="22" Margin="523,237,0,0" VerticalAlignment="Top" Width="22"  RenderTransformOrigin="0.409,3.773"/>
