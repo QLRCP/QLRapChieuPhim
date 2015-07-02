@@ -243,6 +243,20 @@ namespace DAL
             return _index;
         }
 
+       
+        //public static string GetTopMaVe()
+        //{
+        //    string MaVe;
+        //    sqlConnect _sqlConnect = new sqlConnect();
+        //    _sqlConnect.connect();
+
+        //    SqlDataReader reader = (SqlDataReader)_sqlConnect.executeQuery("GetTopMaVe");
+        //    MaVe = reader.ToString();
+        //    reader.Close();
+        //    return MaVe;
+            
+        //}
+
         public static void SetIndexVeBan(int _index)
         {
             sqlConnect _sqlConnect = new sqlConnect();

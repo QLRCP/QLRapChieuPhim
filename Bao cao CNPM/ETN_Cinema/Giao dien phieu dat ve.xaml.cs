@@ -38,8 +38,8 @@ namespace ETN_Cinema
             LphimPUB = phim_bul.GetMaPhim();
             
             cb_TenPhim.ItemsSource = LphimPUB;
-            cb_TenPhim.DisplayMemberPath = "TenPhim";
-            cb_TenPhim.SelectedValuePath = "TenPhim";
+            cb_TenPhim.DisplayMemberPath = "MaPhim";
+            cb_TenPhim.SelectedValuePath = "MaPhim";
             lb_XuatNgayDatVe.Content = DateTime.Today.ToShortDateString();
         }
 

@@ -34,3 +34,12 @@ E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\bin\Debug\PUBLIC.pdb
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.csprojResolveAssemblyReference.cache
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.dll
 E:\This term\Maitaince\QLRapChieuPhim\Bao cao CNPM\BUL\obj\Debug\BUL.pdb
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\bin\Debug\BUL.dll
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\bin\Debug\BUL.pdb
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\bin\Debug\DAL.dll
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\bin\Debug\PUBLIC.dll
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\bin\Debug\DAL.pdb
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\bin\Debug\PUBLIC.pdb
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\obj\Debug\BUL.csprojResolveAssemblyReference.cache
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\obj\Debug\BUL.dll
+C:\Users\cao\Desktop\QLRapChieuPhim-master\QLRapChieuPhim-master\Bao cao CNPM\BUL\obj\Debug\BUL.pdb

@@ -58,26 +58,34 @@ namespace ETN_Cinema
             cb_GioiTinh.ItemsSource = list;
             cb_GioiTinh.SelectedValuePath = "Sex";
             cb_GioiTinh.DisplayMemberPath = "Name";
+            tb_EmailDomain.Text = ".com";
+            lb_NDK.Content = DateTime.Now;
         }
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
             KhachHang_BUL kh_bul = new KhachHang_BUL();
             KhachHang_Pub kh_pub = new KhachHang_Pub();
+            try
+            {
+                kh_pub.MatKhau = "123456";
+                kh_pub.HoTen = tb_HoTen.Text;
+                kh_pub.Email = tb_EmailName.Text + lb_At.Content.ToString() + tb_EmailDomain.Text;
+                kh_pub.DiaChi = tb_DiaChi.Text;
+                kh_pub.Diem = 0;
+                kh_pub.MaLoaiKH = "Khách Hàng Mới";
+                kh_pub.SoDT = tb_SoDienThoai.Text;
+                kh_pub.NgayDangKy = DateTime.Now;
+                kh_pub.NamSinh = datePicker_NgaySinh.SelectedDate.Value;
+                kh_pub.CMND = tb_CMND.Text;
+                kh_pub.GioiTinh = (bool)cb_GioiTinh.SelectedValue;
 
-            kh_pub.MatKhau = "123456";
-            kh_pub.HoTen = tb_HoTen.Text;
-            kh_pub.Email = tb_EmailName.Text + lb_At.Content.ToString() + tb_EmailDomain.Text;
-            kh_pub.DiaChi = tb_DiaChi.Text;
-            kh_pub.Diem = 0;
-            kh_pub.MaLoaiKH = "Khách Hàng Mới";
-            kh_pub.SoDT = tb_SoDienThoai.Text;
-            kh_pub.NgayDangKy = datePicker_NgayDangKy.SelectedDate.Value;
-            kh_pub.NamSinh = datePicker_NgaySinh.SelectedDate.Value;
-            kh_pub.CMND = tb_CMND.Text;
-            kh_pub.GioiTinh = (bool)cb_GioiTinh.SelectedValue;
-
-            kh_bul.Insert(kh_pub);
+                kh_bul.Insert(kh_pub);
+                MessageBox.Show("Đăng ký thành công");
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Đăng ký khách hàng");
+            }
         }
 
         private void cb_GioiTinh_SelectionChanged(object sender, SelectionChangedEventArgs e)

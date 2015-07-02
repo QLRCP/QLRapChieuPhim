@@ -203,6 +203,7 @@ namespace ETN_Cinema
                     _temp.PhongChieu = VarGlobal.g_VeBanPub.PhongChieu;
                     _temp.TenPhim = VarGlobal.g_VeBanPub.TenPhim;
                     _temp.MaGhe = Lselection[i].MaGhe;
+                    _temp.MaPDV = VarGlobal.g_VeBanPub.MaPDV;
                     _temp.MaNV = VarGlobal.g_VeBanPub.MaNV;
                     VarGlobal.g_LVeBanPub.Add(_temp);
                 }
