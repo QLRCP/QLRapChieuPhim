@@ -105,6 +105,43 @@ namespace ETN_Cinema
 
     }
 
+    class CheckNhapKH
+    {
+        public CheckNhapTB _hoten, _sdt, _email,  _diachi, _cmnd;
+        public string _warningMsg;
+        public void Check_Nhap(TextBox hoten, TextBox sdt, TextBox email1, TextBox email2, TextBox diachi, TextBox cmnd)
+        {
+            _hoten = new CheckNhapTB();
+            _hoten.check_Hoten(hoten);
+            _sdt = new CheckNhapTB();
+            _sdt.check_Sdt(sdt);
+            _email = new CheckNhapTB();
+            _email.check_Email(email1,email2);
+            _diachi = new CheckNhapTB();
+            _diachi.check_diaChi(diachi);
+            _cmnd = new CheckNhapTB();
+            _cmnd.check_cmnd(cmnd);
+            _warningMsg = _hoten._warningMsg + _sdt._warningMsg + _email._warningMsg +  _diachi._warningMsg + _cmnd._warningMsg;
+
+        }
+
+        public void Check_Nhap(TextBox hoten, TextBox sdt, TextBox email, TextBox diachi, TextBox cmnd)
+        {
+            _hoten = new CheckNhapTB();
+            _hoten.check_Hoten(hoten);
+            _sdt = new CheckNhapTB();
+            _sdt.check_Sdt(sdt);
+            _email = new CheckNhapTB();
+            _email.check_Email(email);
+            _diachi = new CheckNhapTB();
+            _diachi.check_diaChi(diachi);
+            _cmnd = new CheckNhapTB();
+            _cmnd.check_cmnd(cmnd);
+            _warningMsg = _hoten._warningMsg + _sdt._warningMsg + _email._warningMsg + _diachi._warningMsg + _cmnd._warningMsg;
+
+        }
+
+    }
 
     class CheckNhapTB
     {
@@ -341,6 +378,26 @@ namespace ETN_Cinema
             }
         }
 
+        public void check_Email(TextBox tb1, TextBox tb2)
+        {
+            string str = tb1.Text.ToString() + "@" + tb2.Text.ToString();
+            if (str == "@")
+            {
+                warning("Địa chỉ Email không được để trống");
+            }
+            else
+            {
+                if (!IsValidEmail(str))
+                {
+                    warning("Địa chỉ Email không chính xác");
+                }
+                else
+                {
+                    pass();
+                }
+            }
+        }
+
         public void check_queQuan(TextBox tb)
         {
             if (tb.Text.ToString() == "")
@@ -375,7 +432,19 @@ namespace ETN_Cinema
             }
             else
             {
-                pass();
+                if (!IsNumber(tb.Text.ToString()))
+                {
+                    warning("Số CMND chỉ được chứa ký tự số");
+                }
+                else
+                {
+                    if (tb.Text.Length > 9)
+                    {
+                        warning("Số CMND không được lớn hơn 9 chữ số");
+                    }
+                    else
+                        pass();
+                }
             }
 
         }

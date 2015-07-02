@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ETN_Cinema
-{
+{ 
     /// <summary>
     /// Interaction logic for Giao_dien_ban_ve.xaml
     /// </summary>

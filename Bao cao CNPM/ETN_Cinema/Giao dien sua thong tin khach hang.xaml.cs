@@ -34,6 +34,7 @@ namespace ETN_Cinema
             lb_XuatMaKH.Content = VarGlobal.g_KhachHangPub.MaKH;
             lb_XuatSDT.Text = VarGlobal.g_KhachHangPub.SoDT;
             lb_XuatHoTen.Text = VarGlobal.g_KhachHangPub.HoTen;
+            datepicker_NgaySinh.SelectedDate = DateTime.Now;
 
             list = new List<MyGioiTinh>();
             MyGioiTinh Nam = new MyGioiTinh("Nam", true);
@@ -63,6 +64,9 @@ namespace ETN_Cinema
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
+            KT_Nhap();
+             if (_checkNhap._warningMsg == "")
+            {
             VarGlobal.g_KhachHangPub.CMND = lb_XuatCMND.Text;
             VarGlobal.g_KhachHangPub.DiaChi = lb_XuatDiaChi.Text;
             VarGlobal.g_KhachHangPub.Email = lb_XuatEmail.Text;
@@ -74,6 +78,33 @@ namespace ETN_Cinema
             kh_bul.Update(VarGlobal.g_KhachHangPub);
             MessageBox.Show("Thay đổi thông tin thành công!");
             this.Close();
+            }
+             else
+             {
+                 MessageBox.Show("Xin xem lại thông tin đã nhập");
+
+             }
         }
+
+
+        private CheckNhapKH _checkNhap = new CheckNhapKH();
+
+        private void KT_Nhap()
+        {
+            _checkNhap.Check_Nhap(lb_XuatHoTen, lb_XuatSDT, lb_XuatEmail, lb_XuatDiaChi, lb_XuatCMND);
+
+            warning_Hoten.Source = _checkNhap._hoten._checkImage;
+            warning_Diachi.Source = _checkNhap._diachi._checkImage;
+            warning_Sdt.Source = _checkNhap._sdt._checkImage;
+            warning_Email.Source = _checkNhap._email._checkImage;
+            warning_Cmnd.Source = _checkNhap._cmnd._checkImage;
+            warning_Label1.Content = _checkNhap._hoten._warningMsg;
+            warning_Label2.Content = _checkNhap._sdt._warningMsg;
+            warning_Label3.Content = _checkNhap._email._warningMsg;
+            warning_Label5.Content = _checkNhap._diachi._warningMsg;
+            warning_Label6.Content = _checkNhap._cmnd._warningMsg;
+
+        }
+
     }
 }
