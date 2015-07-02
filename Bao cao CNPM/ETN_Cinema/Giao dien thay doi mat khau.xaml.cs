@@ -49,6 +49,7 @@ namespace ETN_Cinema
                         //_nhanvien_BUL.UpdatePassword(StaticMethod.md5(_matkhaumoi), VarGlobal.g_NhanVienPub.MaNV);
                         _nhanvien_BUL.UpdatePassword(_matkhaumoi, VarGlobal.g_NhanVienPub.MaNV);
                         MessageBox.Show("Thay Đổi Mật Khẩu Thành Công");
+                        VarGlobal.g_NhanVienPub.MatKhau = _matkhaumoi;
                         this.Close();
                     }
                 }

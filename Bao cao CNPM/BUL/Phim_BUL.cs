@@ -35,6 +35,10 @@ namespace BUL
             cls.Update(_info_update);
         }
 
+        public void Delete(string _info_delete)
+        {
+            cls.Delete(_info_delete);
+        }
         public Phim_Pub GetPhimTheoMaPhim(string _MaPhim)
         {
             return cls.GetPhimTheoMaPhim(_MaPhim);

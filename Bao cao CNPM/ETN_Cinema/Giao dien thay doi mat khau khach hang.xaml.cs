@@ -40,8 +40,6 @@ namespace ETN_Cinema
             //if (StaticMethod.md5(pw_MatKhauCu.Password.ToString()) == VarGlobal.g_KhachHangPub.MatKhau)
             if (pw_MatKhauCu.Password.ToString() == VarGlobal.g_KhachHangPub.MatKhau)
             {
-
-
                 if (_matkhaumoi != "" && _matkhaulaplai != "")
                 {
                     if (_matkhaumoi == _matkhaulaplai)
@@ -49,6 +47,7 @@ namespace ETN_Cinema
                         //_khachhang_BUL.UpdatePassword(StaticMethod.md5(_matkhaumoi), VarGlobal.g_KhachHangPub.MaKH);
                         _khachhang_BUL.UpdatePassword(_matkhaumoi, VarGlobal.g_KhachHangPub.MaKH);
                         MessageBox.Show("Thay Đổi Mật Khẩu Thành Công");
+                        VarGlobal.g_KhachHangPub.MatKhau = _matkhaumoi;
                         this.Close();
                     }
                 }

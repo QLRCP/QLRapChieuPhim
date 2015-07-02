@@ -1,8 +1,14 @@
 ﻿<Window x:Class="ETN_Cinema.Giao_dien_quan_li_phong_kinh_doanh"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               Title="Giao diện quản lý phòng kinh doanh" Height="600" Width="1250" WindowStartupLocation="CenterScreen">    <Grid>
-        <Menu IsMainMenu="true"  Name="mn_QuanLiPhongKinhDoanh" Height="85" VerticalAlignment="Top" Background="#FF000204">
+               Title="Giao diện quản lý phòng kinh doanh" Height="600" Width="1370.895" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,113,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Menu IsMainMenu="true"  Name="mn_QuanLiPhongKinhDoanh" Height="85" VerticalAlignment="Top" Background="#FF000204" Margin="0,0,-112,0" Grid.ColumnSpan="3">
 
             <MenuItem x:Name="mn_HoSo" Height="85" Width="130" Click="mn_HoSo_Click" HorizontalContentAlignment="Center">
                 <MenuItem.Icon>
@@ -59,6 +65,14 @@
                 </MenuItem.Icon>
                 <MenuItem.Header>
                     <TextBlock Text="Đổi Mật Khẩu" RenderTransformOrigin="0.753,3.557" Foreground="#FFF98800" FontSize="15" FontWeight="Bold" Height="22" VerticalAlignment="Bottom" Margin="10,0,-10,0"/>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem x:Name="mn_Xuat" Height="84" Width="161" HorizontalContentAlignment="Center" Click="mn_Xuat_Click">
+                <MenuItem.Icon>
+                    <Image Source = "resource/people_manage/logout.png" Height="40" Margin="0,0,-12,-24" RenderTransformOrigin="0.638,-0.295"/>
+                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <TextBlock Text="Đăng Xuất" Margin="25,0,-24,0" RenderTransformOrigin="0.753,3.557" Foreground="#FFF98800" FontSize="15" FontWeight="Bold"/>
                 </MenuItem.Header>
             </MenuItem>
         </Menu>

@@ -29,7 +29,11 @@ namespace ETN_Cinema
         public Giao_dien_chinh_sua_nhan_vien()
         {
             InitializeComponent();
+            load();
+        }
 
+        private void load()
+        {
             PhongBan_BUL _phongbanBUL = new PhongBan_BUL();
 
             _LphongbanPub = _phongbanBUL.GetPB();
@@ -41,7 +45,6 @@ namespace ETN_Cinema
             _index = GetIndex_BUL.GetIndex();
             datePicker_NamSinh.SelectedDate = DateTime.Now.AddYears(-20);
         }
-
         private void btn_ChonAnh_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
@@ -310,22 +313,10 @@ namespace ETN_Cinema
             {
                 if (VarGlobal.g_NhanVienPub.MaNV != cbb_MaNV.SelectedValue.ToString())
                 {
-                                    NhanVien_BUL _nhanvien = new NhanVien_BUL();
-                _nhanvien.Delete(cbb_MaNV.SelectedValue.ToString());
-                MessageBox.Show("Xóa Thành Công - Nhấn OK để tiếp tục");
-                tb_TenNhanVien.Text = "";
-                datePicker_NamSinh.Text = "";
-
-                tb_SoDienThoai.Text = "";
-                tb_Email.Text = "";
-                tb_QueQuan.Text = "";
-                tb_DiaChi.Text = "";
-                tb_CMND.Text = "";
-                cbb_ChucVu.SelectedIndex = -1;
-                datePicker_NgayVaoLam.Text = "";
-                checkBox_Nam.IsChecked = false;
-                checkBox_Nu.IsChecked = false;
-                cbb_MaNV.SelectedIndex = cbb_MaNV.SelectedIndex - 1;
+                    NhanVien_BUL _nhanvien = new NhanVien_BUL();
+                    _nhanvien.Delete(cbb_MaNV.SelectedValue.ToString());
+                    MessageBox.Show("Xóa Thành Công - Nhấn OK để tiếp tục");
+                    this.Close();
                 }
                 else
                 {

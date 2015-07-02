@@ -59,6 +59,8 @@ namespace ETN_Cinema
 
             pdv_bul.XoaPDVTuMaPDV(pdv_pub);
 
+            MessageBox.Show("Xóa thành công - Nhấn OK để tiếp tục");
+
             this.Close();
         }
     }

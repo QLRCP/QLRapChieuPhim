@@ -11,12 +11,12 @@
         <Label x:Name="lb_PhongChieu" Content="Phòng Chiếu" HorizontalAlignment="Left" Margin="28,151,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
         <Label x:Name="lb_NgayDatVe" Content="Ngày Đặt Vé" HorizontalAlignment="Left" Margin="28,182,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
         <Label x:Name="lb_MaGheDat" Content="Mã Ghế Đặt" HorizontalAlignment="Left" Margin="28,213,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
-        <Label x:Name="lb_XuatTenPhim" Content="" HorizontalAlignment="Left" Margin="132,58,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_XuatGioChieu" Content="" HorizontalAlignment="Left" Margin="132,89,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_XuatNgayChieu" Content="" HorizontalAlignment="Left" Margin="132,120,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_XuatPhongChieu" Content="" HorizontalAlignment="Left" Margin="132,151,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_XuatNgayDatVe" Content="" HorizontalAlignment="Left" Margin="132,182,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lb_XuatMaGheDat" Content="" HorizontalAlignment="Left" Margin="132,213,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lb_XuatTenPhim" Content="" HorizontalAlignment="Left" Margin="132,58,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF98800"/>
+        <Label x:Name="lb_XuatGioChieu" Content="" HorizontalAlignment="Left" Margin="132,89,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF98800"/>
+        <Label x:Name="lb_XuatNgayChieu" Content="" HorizontalAlignment="Left" Margin="132,120,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF98800"/>
+        <Label x:Name="lb_XuatPhongChieu" Content="" HorizontalAlignment="Left" Margin="132,151,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF98800"/>
+        <Label x:Name="lb_XuatNgayDatVe" Content="" HorizontalAlignment="Left" Margin="132,182,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF98800"/>
+        <Label x:Name="lb_XuatMaGheDat" Content="" HorizontalAlignment="Left" Margin="132,213,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF98800"/>
         <Button x:Name="btn_Close" Content="Close" HorizontalAlignment="Left" Margin="199,264,0,0" VerticalAlignment="Top" Width="75" Click="btn_Close_Click"/>
         <Button x:Name="btn_Delete" Content="Delete" HorizontalAlignment="Left" Margin="94,264,0,0" VerticalAlignment="Top" Width="75" Click="btn_Delete_Click"/>
     </Grid>

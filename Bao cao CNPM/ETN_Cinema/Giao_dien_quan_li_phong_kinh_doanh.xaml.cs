@@ -102,5 +102,17 @@ namespace ETN_Cinema
             Giao_dien_thong_ke_doanh_so_ve _gdtkdsv = new Giao_dien_thong_ke_doanh_so_ve();
             _gdtkdsv.ShowDialog();
         }
+
+        private void mn_Xuat_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Đăng Xuất", "Đăng Xuất", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+
+                Giao_dien_dang_nhap _gddn = new Giao_dien_dang_nhap();
+                this.IsEnabled = false;
+                this.Close();
+                _gddn.ShowDialog();
+            }
+        }
     }
 }

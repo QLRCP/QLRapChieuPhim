@@ -47,3 +47,10 @@ F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\DAL\bin\Debug\PUBLIC.pdb
 F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\DAL\obj\Debug\DAL.dll
 F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\DAL\obj\Debug\DAL.pdb
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\bin\Debug\DAL.dll
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\bin\Debug\DAL.pdb
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\bin\Debug\PUBLIC.dll
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\bin\Debug\PUBLIC.pdb
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\obj\Debug\DAL.dll
+E:\QLRapChieuPhim.git\Bao cao CNPM\DAL\obj\Debug\DAL.pdb

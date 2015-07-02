@@ -284,5 +284,13 @@ namespace ETN_Cinema
 
         }
 
+        private void DeletePhim(object sender, RoutedEventArgs e)
+        {
+            Phim_BUL _phim = new Phim_BUL();
+            _phim.Delete(cb_MaPhim.SelectedValue.ToString());
+            MessageBox.Show("Xóa Thành Công - Nhấn OK để tiếp tục");
+            this.Close();
+        }
+
     }
 }

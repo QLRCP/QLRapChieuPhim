@@ -147,5 +147,12 @@ namespace DAL
             reader.Close();
             return result;
         }
+
+        public void Delete(string _MaPhim)
+        {
+            string deleteCommad = "delete from Phim where MAPHIM = '" + _MaPhim + "'";
+
+            m_sqlConnect.executeNonQuery(deleteCommad);
+        }
     }
 }
