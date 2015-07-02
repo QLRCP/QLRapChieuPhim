@@ -21,7 +21,7 @@ namespace ETN_Cinema
 {
     class CheckNhapNV
     {
-        public CheckNhapTB _hoten,_sdt,_email,_quequan,_diachi,_cmnd,_cv,_pb,_ava;
+        public CheckNhapTB _hoten, _sdt, _email, _quequan, _diachi, _cmnd, _cv, _pb, _ava;
         public string _warningMsg;
         public void Check_Nhap(TextBox hoten, TextBox sdt, TextBox email, TextBox quequan, TextBox diachi, TextBox cmnd, ComboBox cv, ComboBox pb, TextBlock ava)
         {
@@ -44,7 +44,7 @@ namespace ETN_Cinema
             _cmnd = new CheckNhapTB();
             _cmnd.check_cmnd(cmnd);
             _warningMsg = _hoten._warningMsg + _sdt._warningMsg + _email._warningMsg + _quequan._warningMsg + _diachi._warningMsg + _cmnd._warningMsg + _cv._warningMsg + _pb._warningMsg + _ava._warningMsg;
-            
+
         }
 
     }
@@ -52,9 +52,9 @@ namespace ETN_Cinema
 
     class CheckNhapPhim
     {
-        public CheckNhapTB _ten, _theloai, _noidung, _thoiluong, _dienvien, _daodien, _nuocsx, _tuoiquydinh, _namphathanh,_poster;
+        public CheckNhapTB _ten, _theloai, _noidung, _thoiluong, _dienvien, _daodien, _nuocsx, _tuoiquydinh, _namphathanh, _poster;
         public string _warningMsg;
-        public void Check_Nhap(TextBox ten, ComboBox theloai, TextBox noidung, TextBox thoiluong, TextBox dienvien, TextBox daodien, TextBox nuocsx, TextBox tuoiquydinh, TextBox namphathanh,Uri poster)
+        public void Check_Nhap(TextBox ten, ComboBox theloai, TextBox noidung, TextBox thoiluong, TextBox dienvien, TextBox daodien, TextBox nuocsx, TextBox tuoiquydinh, TextBox namphathanh, Uri poster)
         {
             _ten = new CheckNhapTB();
             _ten.check_Tenphim(ten);
@@ -83,12 +83,12 @@ namespace ETN_Cinema
 
     class CheckNhapSC
     {
-        public CheckNhapTB _maphim,_giochieu,  _giave, _phongchieu, _loaiSC;
+        public CheckNhapTB _maphim, _giochieu, _giave, _phongchieu, _loaiSC;
         public string _warningMsg;
         public void Check_Nhap(ComboBox maphim, ComboBox giochieu, ComboBox phutchieu, TextBox giave, ComboBox phongchieu, ComboBox loaiSC)
         {
             _maphim = new CheckNhapTB();
-            _giochieu= new CheckNhapTB();
+            _giochieu = new CheckNhapTB();
             _giave = new CheckNhapTB();
             _phongchieu = new CheckNhapTB();
             _loaiSC = new CheckNhapTB();
@@ -105,6 +105,43 @@ namespace ETN_Cinema
 
     }
 
+    class CheckNhapKH
+    {
+        public CheckNhapTB _hoten, _sdt, _email, _diachi, _cmnd;
+        public string _warningMsg;
+        public void Check_Nhap(TextBox hoten, TextBox sdt, TextBox email1, TextBox email2, TextBox diachi, TextBox cmnd)
+        {
+            _hoten = new CheckNhapTB();
+            _hoten.check_Hoten(hoten);
+            _sdt = new CheckNhapTB();
+            _sdt.check_Sdt(sdt);
+            _email = new CheckNhapTB();
+            _email.check_Email(email1, email2);
+            _diachi = new CheckNhapTB();
+            _diachi.check_diaChi(diachi);
+            _cmnd = new CheckNhapTB();
+            _cmnd.check_cmnd(cmnd);
+            _warningMsg = _hoten._warningMsg + _sdt._warningMsg + _email._warningMsg + _diachi._warningMsg + _cmnd._warningMsg;
+
+        }
+
+        public void Check_Nhap(TextBox hoten, TextBox sdt, TextBox email, TextBox diachi, TextBox cmnd)
+        {
+            _hoten = new CheckNhapTB();
+            _hoten.check_Hoten(hoten);
+            _sdt = new CheckNhapTB();
+            _sdt.check_Sdt(sdt);
+            _email = new CheckNhapTB();
+            _email.check_Email(email);
+            _diachi = new CheckNhapTB();
+            _diachi.check_diaChi(diachi);
+            _cmnd = new CheckNhapTB();
+            _cmnd.check_cmnd(cmnd);
+            _warningMsg = _hoten._warningMsg + _sdt._warningMsg + _email._warningMsg + _diachi._warningMsg + _cmnd._warningMsg;
+
+        }
+
+    }
 
     class CheckNhapTB
     {
@@ -122,7 +159,7 @@ namespace ETN_Cinema
 
         private void warning(string _Msg)
         {
-             _warningMsg = _Msg;
+            _warningMsg = _Msg;
             _checkImage = _warningIcon;
         }
 
@@ -131,7 +168,7 @@ namespace ETN_Cinema
             _passIcon = GetHinhAnhTuPoster("/check/pass-icon.png");
             _warningIcon = GetHinhAnhTuPoster("/check/warning-icon.png");
         }
-//
+        //
         private bool _is_have_Number(string _str)
         {
             bool kt = false;
@@ -158,9 +195,9 @@ namespace ETN_Cinema
             Regex rx = new Regex(@"^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$");
             return rx.IsMatch(email);
         }
-//
+        //
 
-        public void check_Null(TextBox tb,string mess)
+        public void check_Null(TextBox tb, string mess)
         {
             if (tb.Text.ToString() == "")
             {
@@ -177,17 +214,17 @@ namespace ETN_Cinema
         {
             if (tb.Text.ToString() == "")
             {
-                warning(mess+" không được để trống");
+                warning(mess + " không được để trống");
             }
             else
                 if (!IsNumber(tb.Text.ToString()))
                 {
-                    warning(mess+" chỉ được chứa ký tự số");
+                    warning(mess + " chỉ được chứa ký tự số");
                 }
                 else
                 {
                     pass();
-                }   
+                }
         }
 
         public void check_Image(TextBlock tb, string mess)
@@ -199,7 +236,7 @@ namespace ETN_Cinema
             }
             catch
             {
-                warning(mess+" chưa được chọn");
+                warning(mess + " chưa được chọn");
             }
         }
 
@@ -207,7 +244,7 @@ namespace ETN_Cinema
         public void check_Tenphim(TextBox tb)
         {
             check_Null(tb, "Tên phim không được để trống");
-                
+
         }
         public void check_Theloai(ComboBox tb)
         {
@@ -230,35 +267,35 @@ namespace ETN_Cinema
             }
         }
 
-             public void check_Noidung(TextBox tb)
+        public void check_Noidung(TextBox tb)
         {
             check_Null(tb, "Nội dung phim không được để trống");
-                
+
         }
-         public void check_Thoiluong(TextBox tb)
+        public void check_Thoiluong(TextBox tb)
         {
-            check_isNumber(tb, "Thời lượng");     
+            check_isNumber(tb, "Thời lượng");
         }
 
-         public void check_Daodien(TextBox tb)
-         {
-             check_Null(tb, "Đạo diễn phim không được để trống");
+        public void check_Daodien(TextBox tb)
+        {
+            check_Null(tb, "Đạo diễn phim không được để trống");
 
-         }
-         public void check_Dienvien(TextBox tb)
-         {
-             check_Null(tb, "Diễn viên trong phim không được để trống");
+        }
+        public void check_Dienvien(TextBox tb)
+        {
+            check_Null(tb, "Diễn viên trong phim không được để trống");
 
-         }
-         public void check_Nuocsx(TextBox tb)
-         {
-             check_Null(tb, "Nước sản xuất không được để trống");
-         }
+        }
+        public void check_Nuocsx(TextBox tb)
+        {
+            check_Null(tb, "Nước sản xuất không được để trống");
+        }
 
         public void check_Tuoiquydinh(TextBox tb)
-         {
-             check_isNumber(tb, "Độ tuổi quy định");
-         }
+        {
+            check_isNumber(tb, "Độ tuổi quy định");
+        }
         public void check_Namphathanh(TextBox tb)
         {
             check_isNumber(tb, "Năm phát hành");
@@ -266,18 +303,18 @@ namespace ETN_Cinema
         public void check_Poster(Uri filmPosterURI)
         {
             if (filmPosterURI != null)
-                    {
-                        pass();
-                    }
-                    else
-                    {
-                        warning("Chưa nhập Poster Phim");
-                    }
+            {
+                pass();
+            }
+            else
+            {
+                warning("Chưa nhập Poster Phim");
+            }
         }
 
         //check nhập phim
-        
-// Check nhập nhân viên
+
+        // Check nhập nhân viên
         public void check_Hoten(TextBox tb)
         {
 
@@ -311,12 +348,12 @@ namespace ETN_Cinema
                 }
                 else
                 {
-                    if (tb_sdt.Text.Length>9)
+                    if (tb_sdt.Text.Length > 9)
                     {
                         warning("Số điện thoại không được lớn hơn 9 chữ số");
                     }
                     else
-                    pass();
+                        pass();
                 }
             }
         }
@@ -331,6 +368,26 @@ namespace ETN_Cinema
             else
             {
                 if (!IsValidEmail(tb.Text.ToString()))
+                {
+                    warning("Địa chỉ Email không chính xác");
+                }
+                else
+                {
+                    pass();
+                }
+            }
+        }
+
+        public void check_Email(TextBox tb1, TextBox tb2)
+        {
+            string str = tb1.Text.ToString() + "@" + tb2.Text.ToString();
+            if (str == "@")
+            {
+                warning("Địa chỉ Email không được để trống");
+            }
+            else
+            {
+                if (!IsValidEmail(str))
                 {
                     warning("Địa chỉ Email không chính xác");
                 }
@@ -375,7 +432,19 @@ namespace ETN_Cinema
             }
             else
             {
-                pass();
+                if (!IsNumber(tb.Text.ToString()))
+                {
+                    warning("Số CMND chỉ được chứa ký tự số");
+                }
+                else
+                {
+                    if (tb.Text.Length > 9)
+                    {
+                        warning("Số CMND không được lớn hơn 9 chữ số");
+                    }
+                    else
+                        pass();
+                }
             }
 
         }
@@ -383,7 +452,7 @@ namespace ETN_Cinema
 
         public void check_CV(ComboBox tb)
         {
-            string str=null;
+            string str = null;
             try
             {
                 str = tb.SelectedValue.ToString();
@@ -427,9 +496,9 @@ namespace ETN_Cinema
         {
             check_Image(tb, "Ảnh đại diện");
         }
-// Check nhập nhân viên
+        // Check nhập nhân viên
 
-//Check đăng ký suất chiếu
+        //Check đăng ký suất chiếu
 
 
         public void check_giave(TextBox tb_sdt)
@@ -446,14 +515,14 @@ namespace ETN_Cinema
                 }
                 else
                 {
-                        pass();
+                    pass();
                 }
             }
         }
 
         public void check_giochieu(ComboBox tb, ComboBox tb2)
         {
-            string str = null,str2=null;
+            string str = null, str2 = null;
             try
             {
                 str = tb.SelectedValue.ToString();
@@ -463,35 +532,35 @@ namespace ETN_Cinema
 
             }
 
-                try
-                {
-                    str2 = tb2.SelectedValue.ToString();
-                }
-                catch
-                {
+            try
+            {
+                str2 = tb2.SelectedValue.ToString();
+            }
+            catch
+            {
 
-                }
+            }
 
-                if (str == null)
+            if (str == null)
+            {
+                warning("Chưa chọn giờ chiếu");
+                return;
+            }
+            else
+            {
+                if (str2 == null)
                 {
-                    warning("Chưa chọn giờ chiếu");
+                    warning("Chưa chọn phút chiếu");
                     return;
                 }
                 else
                 {
-                    if (str2 == null)
-                    {
-                        warning("Chưa chọn phút chiếu");
-                        return;
-                    }
-                    else
-                    {
-                        pass();
-                    }
+                    pass();
                 }
-           
-                
-            
+            }
+
+
+
         }
 
 
@@ -560,10 +629,10 @@ namespace ETN_Cinema
 
 
 
-//Check đăng ký suất chiếu
+        //Check đăng ký suất chiếu
 
 
-//Load hình ảnh
+        //Load hình ảnh
         private BitmapImage GetHinhAnhTuPoster(string _Poster)
         {
             BitmapImage bImg = new BitmapImage();
