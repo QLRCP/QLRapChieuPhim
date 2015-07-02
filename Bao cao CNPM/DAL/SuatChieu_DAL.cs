@@ -47,7 +47,7 @@ namespace DAL
         public List<SuatChieu_Pub> GetSuatChieuTheoTenPhim(string _TenPhim)
         {
             List<SqlParameter> Lparameter = new List<SqlParameter>();
-            Lparameter.Add(new SqlParameter("@_TenPhim", _TenPhim));
+            Lparameter.Add(new SqlParameter("@_maphim", _TenPhim));
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetSuatChieuTheoTenPhim", Lparameter);
             List<SuatChieu_Pub> _LSuatChieu = new List<SuatChieu_Pub>();
 
@@ -58,9 +58,9 @@ namespace DAL
                 _SC.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
                 _SC.MaSC = reader["MaSC"].ToString();
                 _SC.NgayChieu = DateTime.Parse(reader["NgayChieu"].ToString());
-                _SC.PhongChieu = reader["PhongChieu"].ToString();
-                _SC.TenPhim = reader["TenPhim"].ToString();
-                _SC.LoaiSuatChieu = reader["LoaiSuatChieu"].ToString();
+                _SC.PhongChieu = reader["MaPC"].ToString();
+                _SC.TenPhim = reader["MaPhim"].ToString();
+                _SC.LoaiSuatChieu = reader["ID"].ToString();
                 _LSuatChieu.Add(_SC);
             }
             reader.Close();

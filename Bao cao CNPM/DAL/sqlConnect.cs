@@ -16,7 +16,7 @@ namespace DAL
         protected SqlDataAdapter adapter;
         protected SqlCommand command;
 
-        public string ConnectionString = @"Data Source=DURANDAL;Initial Catalog=QLRCP;Integrated Security=True";
+        public string ConnectionString = @"Data Source=.;Initial Catalog=QLRAPCHIEUPHIM;Integrated Security=True";
 
         public void connect()
         {

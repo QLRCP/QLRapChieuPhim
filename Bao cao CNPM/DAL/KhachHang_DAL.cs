@@ -21,17 +21,18 @@ namespace DAL
         public void Insert(KhachHang_Pub _info)
         {
             _info.MaKH = GetMa("KH", GetIndex_DAL.GetIndexKhachHang());
-            string insertCommand = @"INSERT INTO KHACHHANG (MaKH, MaLoaiKH, HoTen, NamSinh, GioiTinh, DiaChi, SoDT, Email, CMND, NgayDangKi, MatKhau, Diem) VALUES('" +
+            string insertCommand = @"INSERT INTO KHACHHANG (MAKH, MALOAIKH,HOTEN, NAMSINH, GIOITINH, DIACHI, SODT, EMAIL, CMND, NGAYDANGKY,MATKHAU, DIEM) VALUES('" +
                 _info.MaKH + "', N'" +
                 _info.MaLoaiKH + "','" +
-                _info.HoTen + "', '" + _info.NamSinh.ToShortDateString() + "', '" +
+                _info.HoTen + "', '" +
+                _info.NamSinh.ToShortDateString() + "', '" +
                 _info.GioiTinh + "', N'" +
                 _info.DiaChi + "', '" +
                 _info.SoDT + "', '" +
                 _info.Email + "', " +
                 _info.CMND + ", N'" +
                 _info.NgayDangKy.ToShortDateString() + "', '" +
-                _info.MatKhau + "', " + 
+                _info.MatKhau + "', " +
                 _info.Diem + ")";
 
             m_sqlConnect.executeNonQuery(insertCommand);
@@ -40,15 +41,15 @@ namespace DAL
 
         public void Update(KhachHang_Pub _info_update)
         {
-            string updateCommand = "UPDATE KHACHHANG SET "+
-                "HoTen = N'" + _info_update.HoTen.ToString() + "', "+ 
-                "DiaChi = N'" + _info_update.DiaChi.ToString() + "', "+
+            string updateCommand = "UPDATE KHACHHANG SET " +
+                "HoTen = N'" + _info_update.HoTen.ToString() + "', " +
+                "DiaChi = N'" + _info_update.DiaChi.ToString() + "', " +
                 "SoDT = '" + _info_update.SoDT.ToString() + "', " +
                 "CMND = '" + _info_update.CMND.ToString() + "', " +
-                "Email = '" + _info_update.Email.ToString() + "', " + 
-                "NamSinh = '" + _info_update.NamSinh.ToShortDateString() +"', " +
+                "Email = '" + _info_update.Email.ToString() + "', " +
+                "NamSinh = '" + _info_update.NamSinh.ToShortDateString() + "', " +
                 "GioiTinh = '" + _info_update.GioiTinh.ToString() + "'" +
-                "WHERE MaKH = '" + _info_update.MaKH.ToString() +"'";
+                "WHERE MaKH = '" + _info_update.MaKH.ToString() + "'";
 
             m_sqlConnect.executeNonQuery(updateCommand);
         }
@@ -76,8 +77,8 @@ namespace DAL
                 result.NgayDangKy = DateTime.Parse(reader["NgayDangKy"].ToString());
                 result.MatKhau = reader["MatKhau"].ToString();
                 result.Diem = int.Parse(reader["Diem"].ToString());
-                result.HinhAnh = reader["HinhAnh"].ToString();
-  
+                //result.HinhAnh = reader["HinhAnh"].ToString();
+
             }
             reader.Close();
             return result;
@@ -98,7 +99,7 @@ namespace DAL
             return m_HeSo;
         }
 
-        public float GetHeSoKMTuMaKMVaLoaiKH(string _MaKM,string _TenLoaiKH)
+        public float GetHeSoKMTuMaKMVaLoaiKH(string _MaKM, string _TenLoaiKH)
         {
             float m_HeSo = 0;
             List<SqlParameter> Lparameter = new List<SqlParameter>();
