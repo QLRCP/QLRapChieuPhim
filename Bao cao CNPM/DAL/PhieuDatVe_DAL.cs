@@ -90,16 +90,16 @@ namespace DAL
             return _LpdvPub;
         }
 
-        public List<PhieuDatVe_Pub> GetPDVTheoVeBan (string _MaPhim, string _MaSC)
+        public List<PhieuDatVe_Pub> GetPDVTheoVeBan(string _MaPhim, string _MaSC)
         {
-             PhieuDatVe_Pub result = new PhieuDatVe_Pub();
+            PhieuDatVe_Pub result = new PhieuDatVe_Pub();
             List<SqlParameter> paramters = new List<SqlParameter>();
-          
+
             paramters.Add(new SqlParameter("@_MaPhim", _MaPhim));
             paramters.Add(new SqlParameter("@_MaSC", _MaSC));
             List<PhieuDatVe_Pub> _LpdvPub = new List<PhieuDatVe_Pub>();
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetPDVTheoVeBan", paramters);
-            
+
             while (reader.Read())
             {
                 result = new PhieuDatVe_Pub();
@@ -124,7 +124,7 @@ namespace DAL
             List<SqlParameter> paramters = new List<SqlParameter>();
             paramters.Add(new SqlParameter("@_MaPDV", _MaPDV));
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetPDVTuMaPDV", paramters);
-            
+
             while (reader.Read())
             {
                 result.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
@@ -144,7 +144,7 @@ namespace DAL
 
         public void XoaPDVTuMaPDV(PhieuDatVe_Pub _info)
         {
-            string command = "DELETE FROM PHIEUDATVE WHERE MaPDV = '" + _info.MaPDV +"'";
+            string command = "DELETE FROM PHIEUDATVE WHERE MaPDV = '" + _info.MaPDV + "'";
             m_sqlConnect.executeNonQuery(command);
             string updateChair = "UPDATE GHE SET Trong = 1 WHERE MaGhe = '" + _info.MaGhe + "' AND MaSC ='" + _info.MaSC + "'";
             m_sqlConnect.executeNonQuery(updateChair);
@@ -153,7 +153,7 @@ namespace DAL
         public void Update(PhieuDatVe_Pub _info_update)
         {
             string command = "UPDATE PHIEUDATVE SET MaKH = '" + _info_update.MaKH.ToString() + "', " +
-                "GioChieu = '" + _info_update.GioChieu.ToShortTimeString() +"', " +
+                "GioChieu = '" + _info_update.GioChieu.ToShortTimeString() + "', " +
                 "PhongChieu = '" + _info_update.PhongChieu.ToString() + "', " +
                 "MaGhe = '" + _info_update.MaGhe.ToString() + "', " +
                 "TenPhim = N'" + _info_update.TenPhim.ToString() + "', " +

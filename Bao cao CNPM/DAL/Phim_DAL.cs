@@ -105,27 +105,10 @@ namespace DAL
             return _LPhim;
         }
 
-
-        public List<Phim_Pub> GetPhimTheoTenPhim(string _TenPhim)
-        {
-            List<SqlParameter> Lparameter = new List<SqlParameter>();
-            Lparameter.Add(new SqlParameter("@_tenphim", _TenPhim));
-            SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetMaPhimTheoTenPhim", Lparameter);
-            List<Phim_Pub> _LPhim = new List<Phim_Pub>();
-
-            while (reader.Read())
-            {
-                Phim_Pub _Phim = new Phim_Pub();
-                _Phim.MaPhim = reader["MaPhim"].ToString();
-                _LPhim.Add(_Phim);
-            }
-            reader.Close();
-            return _LPhim;
-        }
         public List<Phim_Pub> GetPhimTheoTheLoai(string _TheLoai)
         {
             List<SqlParameter> Lparameter = new List<SqlParameter>();
-            Lparameter.Add(new SqlParameter("@_MaLP", _TheLoai));
+            Lparameter.Add(new SqlParameter("@TheLoai", _TheLoai));
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetMaPhimTheoTheLoai", Lparameter);
             List<Phim_Pub> _LPhim = new List<Phim_Pub>();
 

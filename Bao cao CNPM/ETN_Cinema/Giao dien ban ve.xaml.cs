@@ -29,42 +29,42 @@ namespace ETN_Cinema
         List<string> LGioChieu;
         List<string> LPhongChieu;
         List<string> LNgayChieu;
-      
+
         public static string g_SuatChieu;
         public static List<string> g_Lmaghe;
-        Phim_BUL phim_bul = new Phim_BUL(); 
+        Phim_BUL phim_bul = new Phim_BUL();
 
         public Giao_dien_ban_ve()
         {
             InitializeComponent();
-           
-           LsuatchieuPUB = new List<SuatChieu_Pub>();
+
+            LsuatchieuPUB = new List<SuatChieu_Pub>();
             LphimPUB = phim_bul.GetMaPhim();
-            
+
             cb_TenPhim.ItemsSource = LphimPUB;
             cb_TenPhim.DisplayMemberPath = "MaPhim";
             cb_TenPhim.SelectedValuePath = "MaPhim";
 
             tb_MaNhanVien.Text = VarGlobal.g_NhanVienPub.MaNV;
-  
-           
+
+
         }
         PhieuDatVe_BUL pdv_BUL;
         private void cb_TenPhim_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SuatChieu_BUL sc_BUL = new SuatChieu_BUL();
-           pdv_BUL = new PhieuDatVe_BUL();
-           
-            
+            pdv_BUL = new PhieuDatVe_BUL();
+
+
             LloaiSC = new List<string>();
             LGioChieu = new List<string>();
             LPhongChieu = new List<string>();
 
-           
+
             //cb_LoaiSuatChieu.ItemsSource = LloaiSC;
-           
+
             LsuatchieuPUB = sc_BUL.GetSuatChieuTheoTenPhim(cb_TenPhim.SelectedValue.ToString());
-            
+
             for (int i = 0; i < LsuatchieuPUB.Count; i++)
             {
                 if (LloaiSC.BinarySearch(LsuatchieuPUB[i].LoaiSuatChieu) < 0)
@@ -72,13 +72,13 @@ namespace ETN_Cinema
                     LloaiSC.Add(LsuatchieuPUB[i].LoaiSuatChieu);
                 }
             }
-            
+
             cb_PhongChieu.ItemsSource = LPhongChieu;
             cb_LoaiSuatChieu.ItemsSource = LloaiSC;
             cb_GioChieu.ItemsSource = LGioChieu;
             cb_NgayChieu.ItemsSource = null;
             cb_LoaiSuatChieu.Text = "";
-           
+
         }
 
         private void cb_LoaiSuatChieu_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -43,7 +43,7 @@ namespace DAL
                 }
             }*/
         }
-     
+
         public List<SuatChieu_Pub> GetSuatChieuTheoTenPhim(string _TenPhim)
         {
             List<SqlParameter> Lparameter = new List<SqlParameter>();
@@ -51,7 +51,7 @@ namespace DAL
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetSuatChieuTheoTenPhim", Lparameter);
             List<SuatChieu_Pub> _LSuatChieu = new List<SuatChieu_Pub>();
 
-            while (reader.Read())   
+            while (reader.Read())
             {
                 SuatChieu_Pub _SC = new SuatChieu_Pub();
                 _SC.Gia = float.Parse(reader["Gia"].ToString());
@@ -79,8 +79,8 @@ namespace DAL
                 _SC.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
                 _SC.MaSC = reader["MaSC"].ToString();
                 _SC.NgayChieu = DateTime.Parse(reader["NgayChieu"].ToString());
-                _SC.PhongChieu = reader["MaPC"].ToString();
-                _SC.TenPhim = reader["MaPhim"].ToString();
+                _SC.PhongChieu = reader["MAPC"].ToString();
+                _SC.TenPhim = reader["MAPHIM"].ToString();
                 _SC.LoaiSuatChieu = reader["ID"].ToString();
                 _LSuatChieu.Add(_SC);
             }
@@ -106,9 +106,9 @@ namespace DAL
             string updateCommand = @"UPDATE SUATCHIEU SET " + 
                 "GioChieu = '" + _info_update.GioChieu.ToShortTimeString() + "', " + 
                 "NgayChieu = '" + _info_update.NgayChieu.ToShortDateString() + "', " +
-                "MaPC = '" + _info_update.PhongChieu.ToString() + "', " + 
+                "MAPC = '" + _info_update.PhongChieu.ToString() + "', " + 
                 "ID = '" + _info_update.LoaiSuatChieu.ToString()  + "', " + 
-                "MaPhim = N'" + _info_update.TenPhim.ToString() + "', " + 
+                "MAPHIM = '" + _info_update.TenPhim.ToString() + "', " + 
                 "Gia = '" + _info_update.Gia.ToString() + "' WHERE MaSC = '" + _info_update.MaSC.ToString() + "'";
             m_sqlConnect.executeNonQuery(updateCommand);
         }
@@ -126,8 +126,8 @@ namespace DAL
                 result.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
                 result.MaSC = reader["MaSC"].ToString();
                 result.NgayChieu = DateTime.Parse(reader["NgayChieu"].ToString());
-                result.PhongChieu = reader["MaPC"].ToString();
-                result.TenPhim = reader["MaPhim"].ToString();
+                result.PhongChieu = reader["MAPC"].ToString();
+                result.TenPhim = reader["MAPHIM"].ToString();
                 result.LoaiSuatChieu = reader["ID"].ToString();
             }
 

@@ -56,8 +56,6 @@ namespace ETN_Cinema
     public partial class Giao_dien_tinh_gia_ve : Window
     {
         List<SelectableThing> Lkm;
-       // List<PhieuDatVe_Pub> LPhieuDatVe;
-       // PhieuDatVe_BUL phieuDV_bul = new PhieuDatVe_BUL();
         public Giao_dien_tinh_gia_ve()
         {
             InitializeComponent();
@@ -69,10 +67,6 @@ namespace ETN_Cinema
                 Lkm.Add(new SelectableThing(tempList[i]));
             }
             CheckBoxes.ItemsSource = Lkm;
-
-         
-          //  LPhieuDatVe = phieuDV_bul.GetPDVTuMaKH(tb_MaKH.Text.ToString());
-            
         }
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
@@ -104,11 +98,10 @@ namespace ETN_Cinema
             {
                 LHeSoKM.Add(kh_bul.GetHeSoKMTuMaKMVaLoaiKH(LMaKM[i], loaiKH));
             }
-            float Final_Giave = VarGlobal.g_VeBanPub.GiaVe;
+            float Final_Giave = 0;
 
             for (int i = 0; i < VarGlobal.g_LVeBanPub.Count; i++)
             {
-                
                 VarGlobal.g_LVeBanPub[i].GiaVe *= f_HeSoUuDai;
                 VarGlobal.g_LVeBanPub[i].MaKH = tb_MaKH.Text;
             }
@@ -124,7 +117,6 @@ namespace ETN_Cinema
             for (int i = 0; i < VarGlobal.g_LVeBanPub.Count; i++)
             {
                 Final_Giave += VarGlobal.g_LVeBanPub[i].GiaVe;
-                VarGlobal.g_LVeBanPub[i].GiaVe = Final_Giave;
                 vb_BUL.Insert(VarGlobal.g_LVeBanPub[i]);
             }
 

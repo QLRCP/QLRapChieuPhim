@@ -36,7 +36,7 @@ namespace ETN_Cinema
             Phim_BUL phim_bul = new Phim_BUL();
             LsuatchieuPUB = new List<SuatChieu_Pub>();
             LphimPUB = phim_bul.GetMaPhim();
-            
+
             cb_TenPhim.ItemsSource = LphimPUB;
             cb_TenPhim.DisplayMemberPath = "MaPhim";
             cb_TenPhim.SelectedValuePath = "MaPhim";
@@ -51,7 +51,7 @@ namespace ETN_Cinema
             LPhongChieu = new List<string>();
             //cb_LoaiSuatChieu.ItemsSource = LloaiSC;
             LsuatchieuPUB = sc_BUL.GetSuatChieuTheoTenPhim(cb_TenPhim.SelectedValue.ToString());
-            
+
             for (int i = 0; i < LsuatchieuPUB.Count; i++)
             {
                 if (LloaiSC.BinarySearch(LsuatchieuPUB[i].LoaiSuatChieu) < 0)
@@ -115,20 +115,20 @@ namespace ETN_Cinema
             cb_GioChieu.Text = "";
         }
 
-        
-        
+
+
         private void XuatMaGhe(object sender, System.EventArgs e)
         {
             lb_XuatMaGheDat.Content = "";
             for (int i = 0; i < g_Lmaghe.Count; i++)
-			{
+            {
                 lb_XuatMaGheDat.Content += g_Lmaghe[i];
                 if (i != g_Lmaghe.Count - 1)
                 {
                     lb_XuatMaGheDat.Content += ", ";
                 }
                 //btn_Chair.IsEnabled = false;
-			}
+            }
         }
 
         private void btn_Chair_Click(object sender, RoutedEventArgs e)
