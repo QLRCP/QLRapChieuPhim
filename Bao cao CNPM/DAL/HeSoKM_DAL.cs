@@ -19,9 +19,9 @@ namespace DAL
 
         public void Insert(HeSoKM_Pub _info)
         {
-            _info.MaHSMK = GetTopIndexOfFilm("HSKM", GetIndex_DAL.GetIndexHSKhuyenMai());
+            _info.MaHSMK = GetTopIndexOfFilm("HS", GetIndex_DAL.GetIndexHSKhuyenMai());
 
-            string insertCommand = @"INSERT INTO HESOKM(MaHeSoKM, MaKM, TenLoaiKH, HeSoKM) VALUES('" +
+            string insertCommand = @"INSERT INTO HESOKM(MAHESOKM, MAKM, MALOAIKH,HESOKM) VALUES('" +
                 _info.MaHSMK + "', '" +
                 _info.MaKM + "', N'" +
                 _info.TenLoaiKH +"'," +
@@ -36,14 +36,14 @@ namespace DAL
             HeSoKM_Pub result = new HeSoKM_Pub();
             List<SqlParameter> Lparameter = new List<SqlParameter>();
             Lparameter.Add(new SqlParameter("@_MaKM", _MaKM));
-            Lparameter.Add(new SqlParameter("@_TenLoaiKH", _TenLoaiKH));
+            Lparameter.Add(new SqlParameter("@_MaLoaiKH", _TenLoaiKH));
             SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("[GetHSKMTheoMaKMvaLoaiKM]", Lparameter);
 
             while (reader.Read())
             {
                 result.MaKM = reader["MaKM"].ToString();
                 result.MaHSMK = reader["MaHeSoKM"].ToString();
-                result.TenLoaiKH = reader["TenLoaiKH"].ToString();
+                result.TenLoaiKH = reader["MaLoaiKH"].ToString();
                 result.HeSoKM = float.Parse(reader["HeSoKM"].ToString());
             }
 
@@ -56,7 +56,7 @@ namespace DAL
             string updateCommand = @"UPDATE HESOKM SET " +
             "HeSoKM = '" + _info_Update.HeSoKM + "'" +
             " WHERE MaKM = '" + _info_Update.MaKM.ToString() + "' " +
-            "AND TenLoaiKH = N'" + _info_Update.TenLoaiKH + "'";
+            "AND MaLoaiKH = N'" + _info_Update.TenLoaiKH + "'";
 
             m_sqlConnect.executeNonQuery(updateCommand);
         }

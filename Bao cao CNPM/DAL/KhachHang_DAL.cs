@@ -21,10 +21,11 @@ namespace DAL
         public void Insert(KhachHang_Pub _info)
         {
             _info.MaKH = GetMa("KH", GetIndex_DAL.GetIndexKhachHang());
-            string insertCommand = @"INSERT INTO KHACHHANG (MaKH, MaLoaiKH, HoTen, NamSinh, GioiTinh, DiaChi, SoDT, Email, CMND, NgayDangKi, MatKhau, Diem) VALUES('" +
+            string insertCommand = @"INSERT INTO KHACHHANG (MAKH, MALOAIKH,HOTEN, NAMSINH, GIOITINH, DIACHI, SODT, EMAIL, CMND, NGAYDANGKY,MATKHAU, DIEM) VALUES('" +
                 _info.MaKH + "', N'" +
                 _info.MaLoaiKH + "','" +
-                _info.HoTen + "', '" + _info.NamSinh.ToShortDateString() + "', '" +
+                _info.HoTen + "', '" + 
+                _info.NamSinh.ToShortDateString() + "', '" +
                 _info.GioiTinh + "', N'" +
                 _info.DiaChi + "', '" +
                 _info.SoDT + "', '" +
@@ -76,7 +77,7 @@ namespace DAL
                 result.NgayDangKy = DateTime.Parse(reader["NgayDangKy"].ToString());
                 result.MatKhau = reader["MatKhau"].ToString();
                 result.Diem = int.Parse(reader["Diem"].ToString());
-                result.HinhAnh = reader["HinhAnh"].ToString();
+                //result.HinhAnh = reader["HinhAnh"].ToString();
   
             }
             reader.Close();

@@ -24,31 +24,45 @@ namespace ETN_Cinema
     {
         List<Phim_Pub> LphimPUB;
         List<SuatChieu_Pub> LsuatchieuPUB;
+        List<PhieuDatVe_Pub> Lphieudatve;
         List<string> LloaiSC;
         List<string> LGioChieu;
         List<string> LPhongChieu;
         List<string> LNgayChieu;
+      
         public static string g_SuatChieu;
         public static List<string> g_Lmaghe;
+        Phim_BUL phim_bul = new Phim_BUL(); 
+
         public Giao_dien_ban_ve()
         {
             InitializeComponent();
-            Phim_BUL phim_bul = new Phim_BUL();
-            LsuatchieuPUB = new List<SuatChieu_Pub>();
+           
+           LsuatchieuPUB = new List<SuatChieu_Pub>();
             LphimPUB = phim_bul.GetMaPhim();
             
             cb_TenPhim.ItemsSource = LphimPUB;
-            cb_TenPhim.DisplayMemberPath = "TenPhim";
-            cb_TenPhim.SelectedValuePath = "TenPhim";
-        }
+            cb_TenPhim.DisplayMemberPath = "MaPhim";
+            cb_TenPhim.SelectedValuePath = "MaPhim";
 
+            tb_MaNhanVien.Text = VarGlobal.g_NhanVienPub.MaNV;
+  
+           
+        }
+        PhieuDatVe_BUL pdv_BUL;
         private void cb_TenPhim_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SuatChieu_BUL sc_BUL = new SuatChieu_BUL();
+           pdv_BUL = new PhieuDatVe_BUL();
+           
+            
             LloaiSC = new List<string>();
             LGioChieu = new List<string>();
             LPhongChieu = new List<string>();
+
+           
             //cb_LoaiSuatChieu.ItemsSource = LloaiSC;
+           
             LsuatchieuPUB = sc_BUL.GetSuatChieuTheoTenPhim(cb_TenPhim.SelectedValue.ToString());
             
             for (int i = 0; i < LsuatchieuPUB.Count; i++)
@@ -58,11 +72,13 @@ namespace ETN_Cinema
                     LloaiSC.Add(LsuatchieuPUB[i].LoaiSuatChieu);
                 }
             }
+            
             cb_PhongChieu.ItemsSource = LPhongChieu;
             cb_LoaiSuatChieu.ItemsSource = LloaiSC;
             cb_GioChieu.ItemsSource = LGioChieu;
             cb_NgayChieu.ItemsSource = null;
             cb_LoaiSuatChieu.Text = "";
+           
         }
 
         private void cb_LoaiSuatChieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -112,6 +128,10 @@ namespace ETN_Cinema
             cb_NgayChieu.Text = "";
             cb_PhongChieu.Text = "";
             cb_GioChieu.Text = "";
+            Lphieudatve = pdv_BUL.GetMaPDVTheoVeBan(cb_TenPhim.SelectedValue.ToString(), LsuatchieuPUB[0].MaSC);
+            cb_PhieuDatVe.ItemsSource = Lphieudatve;
+            cb_PhieuDatVe.DisplayMemberPath = "MaPDV";
+            cb_PhieuDatVe.SelectedValuePath = "MaPDV";
         }
 
         private void btn_Next_Click(object sender, RoutedEventArgs e)
@@ -127,8 +147,9 @@ namespace ETN_Cinema
             VarGlobal.g_VeBanPub.GiaVe = LsuatchieuPUB[0].Gia;
             VarGlobal.g_VeBanPub.NgayChieu = LsuatchieuPUB[0].NgayChieu;
             VarGlobal.g_VeBanPub.PhongChieu = cb_PhongChieu.Text;
-            VarGlobal.g_VeBanPub.TenPhim = cb_TenPhim.Text;
-            VarGlobal.g_VeBanPub.MaNV = tb_MaNhanVien.Text;//chỗ này thay bằng mã nhân viên lúc nhân viên nó đăng nhập vào nha Khoa(nhân viên bình thường thì chỉ cho nó truy cập vào chức năng bán vé thôi)!
+            VarGlobal.g_VeBanPub.TenPhim = phim_bul.GetPhimTheoMaPhim(cb_TenPhim.Text.ToString()).TenPhim;
+            VarGlobal.g_VeBanPub.MaPDV = cb_PhieuDatVe.Text;
+            VarGlobal.g_VeBanPub.MaNV = tb_MaNhanVien.Text;
             g_SuatChieu = LsuatchieuPUB[0].MaSC;
             Giao_dien_chon_ghe_dat_ve _gdcg = new Giao_dien_chon_ghe_dat_ve();
             this.Close();

@@ -90,6 +90,34 @@ namespace DAL
             return _LpdvPub;
         }
 
+        public List<PhieuDatVe_Pub> GetPDVTheoVeBan (string _MaPhim, string _MaSC)
+        {
+             PhieuDatVe_Pub result = new PhieuDatVe_Pub();
+            List<SqlParameter> paramters = new List<SqlParameter>();
+          
+            paramters.Add(new SqlParameter("@_MaPhim", _MaPhim));
+            paramters.Add(new SqlParameter("@_MaSC", _MaSC));
+            List<PhieuDatVe_Pub> _LpdvPub = new List<PhieuDatVe_Pub>();
+            SqlDataReader reader = (SqlDataReader)m_sqlConnect.executeQueryParameter("GetPDVTheoVeBan", paramters);
+            
+            while (reader.Read())
+            {
+                result = new PhieuDatVe_Pub();
+                result.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
+                result.MaGhe = reader["MaGhe"].ToString();
+                result.MaKH = reader["MaKH"].ToString();
+                result.MaPDV = reader["MaPDV"].ToString();
+                result.NgayChieu = DateTime.Parse(reader["NgayChieu"].ToString());
+                result.NgayDatVe = DateTime.Parse(reader["NgayDatVe"].ToString());
+                result.TenPhim = reader["TenPhim"].ToString();
+                result.TriGia = float.Parse(reader["TriGia"].ToString());
+                result.MaSC = reader["MaSC"].ToString();
+                _LpdvPub.Add(result);
+            }
+            reader.Close();
+            return _LpdvPub;
+        }
+
         public PhieuDatVe_Pub GetPDVTuMaPDV(string _MaPDV)
         {
             PhieuDatVe_Pub result = new PhieuDatVe_Pub();

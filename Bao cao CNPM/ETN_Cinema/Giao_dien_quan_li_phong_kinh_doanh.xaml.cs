@@ -87,7 +87,7 @@ namespace ETN_Cinema
 
         private void mn_ChamSocKhachHang_Click(object sender, RoutedEventArgs e)
         {
-            Giao_dien_dang_ky_khach_hang _gddkkh = new Giao_dien_dang_ky_khach_hang();
+            Giao_dien_dang_ky_khach_hang _gddkkh = new Giao_dien_dang_ky_khach_hang(); 
             _gddkkh.ShowDialog();
         }
 
