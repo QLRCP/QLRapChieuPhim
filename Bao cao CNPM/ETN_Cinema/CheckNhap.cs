@@ -81,6 +81,31 @@ namespace ETN_Cinema
         }
     }
 
+    class CheckNhapSC
+    {
+        public CheckNhapTB _maphim,_giochieu,  _giave, _phongchieu, _loaiSC;
+        public string _warningMsg;
+        public void Check_Nhap(ComboBox maphim, ComboBox giochieu, ComboBox phutchieu, TextBox giave, ComboBox phongchieu, ComboBox loaiSC)
+        {
+            _maphim = new CheckNhapTB();
+            _giochieu= new CheckNhapTB();
+            _giave = new CheckNhapTB();
+            _phongchieu = new CheckNhapTB();
+            _loaiSC = new CheckNhapTB();
+            _maphim.check_maphim(maphim);
+            _giave.check_giave(giave);
+            _giochieu.check_giochieu(giochieu, phutchieu);
+            _phongchieu.check_phongchieu(phongchieu);
+            _loaiSC.check_LSC(loaiSC);
+
+
+            _warningMsg = _giochieu._warningMsg + _giave._warningMsg + _phongchieu._warningMsg + _loaiSC._warningMsg;
+
+        }
+
+    }
+
+
     class CheckNhapTB
     {
         public BitmapImage _warningIcon;
@@ -404,6 +429,141 @@ namespace ETN_Cinema
         }
 // Check nhập nhân viên
 
+//Check đăng ký suất chiếu
+
+
+        public void check_giave(TextBox tb_sdt)
+        {
+            if (tb_sdt.Text.ToString() == "")
+            {
+                warning("Giá vé không được để trống");
+            }
+            else
+            {
+                if (!IsNumber(tb_sdt.Text.ToString()))
+                {
+                    warning("Giá vé chỉ được chứa ký tự số");
+                }
+                else
+                {
+                        pass();
+                }
+            }
+        }
+
+        public void check_giochieu(ComboBox tb, ComboBox tb2)
+        {
+            string str = null,str2=null;
+            try
+            {
+                str = tb.SelectedValue.ToString();
+            }
+            catch
+            {
+
+            }
+
+                try
+                {
+                    str2 = tb2.SelectedValue.ToString();
+                }
+                catch
+                {
+
+                }
+
+                if (str == null)
+                {
+                    warning("Chưa chọn giờ chiếu");
+                    return;
+                }
+                else
+                {
+                    if (str2 == null)
+                    {
+                        warning("Chưa chọn phút chiếu");
+                        return;
+                    }
+                    else
+                    {
+                        pass();
+                    }
+                }
+           
+                
+            
+        }
+
+
+        public void check_phongchieu(ComboBox tb)
+        {
+            string str = null;
+            try
+            {
+                str = tb.SelectedValue.ToString();
+            }
+            catch
+            {
+
+            }
+            if (str == null)
+            {
+                warning("Chưa chọn phòng chiếu");
+            }
+            else
+            {
+                pass();
+            }
+        }
+
+        public void check_maphim(ComboBox tb)
+        {
+            string str = null;
+            try
+            {
+                str = tb.SelectedValue.ToString();
+            }
+            catch
+            {
+
+            }
+            if (str == null)
+            {
+                warning("Chưa chọn mã phim");
+            }
+            else
+            {
+                pass();
+            }
+        }
+
+        public void check_LSC(ComboBox tb)
+        {
+            string str = null;
+            try
+            {
+                str = tb.SelectedValue.ToString();
+            }
+            catch
+            {
+
+            }
+            if (str == null)
+            {
+                warning("Chưa chọn loại suất chiếu");
+            }
+            else
+            {
+                pass();
+            }
+        }
+
+
+
+//Check đăng ký suất chiếu
+
+
+//Load hình ảnh
         private BitmapImage GetHinhAnhTuPoster(string _Poster)
         {
             BitmapImage bImg = new BitmapImage();

@@ -36,6 +36,7 @@ namespace ETN_Cinema
             cb_MaSC.DisplayMemberPath = "MaSC";
             cb_MaSC.SelectedValuePath = "MaSC";
 
+
             for (int i = 0; i < 24; i++)
             {
                 cb_Hour.Items.Add(i.ToString());
@@ -68,12 +69,18 @@ namespace ETN_Cinema
            
 
         }
-
+        CheckNhapSC _checkNhap = new CheckNhapSC();
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
+            KT_TaoSC();
             SuatChieu_BUL sc_bul = new SuatChieu_BUL();
             SuatChieu_Pub sc_pub = new SuatChieu_Pub();
-
+            try
+            {
+                string str = cb_MaSC.SelectedItem.ToString();
+           
+            if (_checkNhap._warningMsg == "")
+            {
                 sc_pub.GioChieu = new DateTime(1, 1, 1, int.Parse(cb_Hour.Text), int.Parse(cb_Minute.Text), 0);
       //          sc_pub.GioChieu = new DateTime(1, 1, 1,1,1, 0);
                 sc_pub.NgayChieu = datePicker_NgayChieu.SelectedDate.Value;
@@ -85,6 +92,17 @@ namespace ETN_Cinema
                 sc_bul.Update(sc_pub);
 
                 MessageBox.Show("Thay đổi thành công");
+                this.Close();
+            }
+             else
+             {
+                 MessageBox.Show("Xin vui lòng xem lại thông tin đã sửa");
+             }
+            }
+            catch
+            {
+                MessageBox.Show("Xin vui lòng chọn mã phim hoặc tên phim để sửa");
+            }
 
         }
 
@@ -109,6 +127,18 @@ namespace ETN_Cinema
 
         private void cb_LoaiSuatChieu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+
+        private void KT_TaoSC()
+        {
+            _checkNhap.Check_Nhap(cb_MaSC, cb_Hour, cb_Minute, tb_GiaVe, cb_TenPhongChieu, cb_LoaiSuatChieu);
+
+            
+            warning_giave.Source = _checkNhap._giave._checkImage;
+            warning_Label2.Content = _checkNhap._giave._warningMsg;
+
 
         }
     }
