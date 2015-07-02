@@ -24,10 +24,17 @@ namespace ETN_Cinema
         public Giao_dien_nhap_khuyen_mai()
         {
             InitializeComponent();
+            datepicker_NgayKetThuc.SelectedDate = DateTime.Now;
+            datepicker_NgayBatDau.SelectedDate = DateTime.Now;
+           
         }
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
+            KT_NhapKM();
+
+            if (_checkNhap._warningMsg == "")
+            {
             KhuyenMai_Pub km_pub = new KhuyenMai_Pub();
             KhuyenMai_BUL km_bul = new KhuyenMai_BUL();
 
@@ -41,6 +48,7 @@ namespace ETN_Cinema
             km_pub.NgayBatDau = datepicker_NgayBatDau.SelectedDate.Value;
             km_pub.NgayKetThuc = datepicker_NgayKetThuc.SelectedDate.Value;
             km_pub.NoiDung = tb_NoiDungKM.Text;
+          
 
             hskm_pub1.HeSoKM = float.Parse(tb_LoaiKHMoi.Text);
             hskm_pub2.HeSoKM = float.Parse(tb_LoaiKHTT.Text);
@@ -51,17 +59,28 @@ namespace ETN_Cinema
             hskm_pub2.MaKM = GetMa("KM", GetIndex_BUL.GetIndexKhuyenMai());
             hskm_pub3.MaKM = GetMa("KM", GetIndex_BUL.GetIndexKhuyenMai());
             hskm_pub4.MaKM = GetMa("KM", GetIndex_BUL.GetIndexKhuyenMai());
+            km_bul.Insert(km_pub);
 
-            hskm_pub1.TenLoaiKH = lb_LoaiKHMoi.Content.ToString();
-            hskm_pub2.TenLoaiKH = lb_LoaiKHTT.Content.ToString();
-            hskm_pub3.TenLoaiKH = lb_LoaiKHVIP.Content.ToString();
-            hskm_pub4.TenLoaiKH = lb_LoaiKHBT.Content.ToString();
+            hskm_pub1.TenLoaiKH = "LK0001";
+            hskm_pub2.TenLoaiKH = "LK0002";
+            hskm_pub3.TenLoaiKH = "LK0003";
+            hskm_pub4.TenLoaiKH = "LK0004";
 
             hskm_bul.Insert(hskm_pub1);
             hskm_bul.Insert(hskm_pub2);
             hskm_bul.Insert(hskm_pub3);
             hskm_bul.Insert(hskm_pub4);
-            km_bul.Insert(km_pub);
+
+           
+            MessageBox.Show("Nhập khuyến mãi thành công");
+            this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Xin xem lại thông tin đã nhập");
+
+            }
         }
 
         public string GetMa(string _startString, int m_Index)
@@ -89,5 +108,43 @@ namespace ETN_Cinema
                 }
             }
         }
+
+
+        private void datepicker_NgayKetThuc_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(datepicker_NgayKetThuc.SelectedDate<datepicker_NgayBatDau.SelectedDate)
+            {
+                MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu");
+                datepicker_NgayKetThuc.SelectedDate = datepicker_NgayBatDau.SelectedDate;
+
+            }
+        }
+
+
+
+        private CheckNhapKM _checkNhap = new CheckNhapKM();
+
+        private void KT_NhapKM()
+        {
+            _checkNhap.Check_Nhap(tb_TenKM, tb_NoiDungKM, tb_LoaiKHMoi, tb_LoaiKHTT, tb_LoaiKHVIP, tb_LoaiKHBT);
+            warning1.Source = _checkNhap._tb1._checkImage;
+            warning2.Source = _checkNhap._tb2._checkImage;
+            warning3.Source = _checkNhap._tb3._checkImage;
+            warning4.Source = _checkNhap._tb4._checkImage;
+            warning5.Source = _checkNhap._tb5._checkImage;
+            warning6.Source = _checkNhap._tb6._checkImage;
+
+
+
+            warning_Label1.Content = _checkNhap._tb1._warningMsg;
+            warning_Label2.Content = _checkNhap._tb2._warningMsg;
+            warning_Label3.Content = _checkNhap._tb3._warningMsg;
+            warning_Label4.Content = _checkNhap._tb4._warningMsg;
+            warning_Label5.Content = _checkNhap._tb5._warningMsg;
+            warning_Label6.Content = _checkNhap._tb6._warningMsg;
+
+
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace DAL
         protected SqlDataAdapter adapter;
         protected SqlCommand command;
 
-        public string ConnectionString = @"Data Source=SPACE\SQLEXPRESS;Initial Catalog=QLRAPCHIEUPHIM;Integrated Security=True";
+        public string ConnectionString = @"Data Source=.;Initial Catalog=QLRAPCHIEUPHIM;Integrated Security=True";
 
         public void connect()
         {

@@ -33,6 +33,11 @@ namespace ETN_Cinema
         }
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
         {
+            KT_NhapKM();
+
+            
+            if (_checkNhap._warningMsg == "")
+            {
             string _MaKM = "";
             if (cb_MaCTKM.SelectedValue != null)
             {
@@ -56,10 +61,10 @@ namespace ETN_Cinema
             hskm3_Pub.MaKM = _MaKM;
             hskm4_Pub.MaKM = _MaKM;
 
-            hskm1_Pub.TenLoaiKH = lb_LoaiKHMoi.Content.ToString();
-            hskm2_Pub.TenLoaiKH = lb_LoaiKHTT.Content.ToString();
-            hskm3_Pub.TenLoaiKH = lb_LoaiKHVIP.Content.ToString();
-            hskm4_Pub.TenLoaiKH = lb_LoaiKHBT.Content.ToString();
+            hskm1_Pub.TenLoaiKH = "LK0001";
+            hskm2_Pub.TenLoaiKH = "LK0002";
+            hskm3_Pub.TenLoaiKH = "LK0003";
+            hskm4_Pub.TenLoaiKH = "LK0004";
 
             hskm1_Pub.HeSoKM = float.Parse(tb_LoaiKHMoi.Text);
             hskm2_Pub.HeSoKM = float.Parse(tb_LoaiKHTT.Text);
@@ -73,6 +78,14 @@ namespace ETN_Cinema
             hskm_BUL.UpdateHSKM(hskm4_Pub);
             km_BUL.Update(km_Pub);
             MessageBox.Show("Update thành công!");
+            this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Xin xem lại thông tin đã nhập");
+
+            }
         }
 
         public string GetMa(string _startString, int m_Index)
@@ -110,16 +123,57 @@ namespace ETN_Cinema
             }
             KhuyenMai_BUL kmBUL = new KhuyenMai_BUL();
             KhuyenMai_Pub kmPub = kmBUL.GetKMTheoMaKM(_MaKM);
+            HeSoKM_BUL HSKM_BUL = new HeSoKM_BUL();
+            //HeSoKM_Pub hskm = HSKM_BUL.
             tb_TenKM.Text = kmPub.TenKM;
             tb_NoiDungKM.Text = kmPub.NoiDung;
             datepicker_NgayBatDau.SelectedDate = kmPub.NgayBatDau;
             datepicker_NgayKetThuc.SelectedDate = kmPub.NgayKetThuc;
 
-            HeSoKM_BUL HSKM_BUL = new HeSoKM_BUL();
-            tb_LoaiKHMoi.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, lb_LoaiKHMoi.Content.ToString()).HeSoKM.ToString();
-            tb_LoaiKHTT.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, lb_LoaiKHTT.Content.ToString()).HeSoKM.ToString();
-            tb_LoaiKHVIP.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, lb_LoaiKHVIP.Content.ToString()).HeSoKM.ToString();
-            tb_LoaiKHBT.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, lb_LoaiKHBT.Content.ToString()).HeSoKM.ToString();
+
+            tb_LoaiKHMoi.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, "LK0001").HeSoKM.ToString();
+            tb_LoaiKHTT.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, "LK0002").HeSoKM.ToString();
+            tb_LoaiKHVIP.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, "LK0003").HeSoKM.ToString();
+            tb_LoaiKHBT.Text = HSKM_BUL.GetHSKMTheoMaKMvaLoaiKM(kmPub.MaKM, "LK0004").HeSoKM.ToString();
         }
+
+        
+ private void datepicker_NgayKetThuc_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(datepicker_NgayKetThuc.SelectedDate<datepicker_NgayBatDau.SelectedDate)
+            {
+                MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu");
+                datepicker_NgayKetThuc.SelectedDate = datepicker_NgayBatDau.SelectedDate;
+
+            }
+        }
+
+
+
+        private CheckNhapKM _checkNhap = new CheckNhapKM();
+
+        private void KT_NhapKM()
+        {
+            _checkNhap.Check_Nhap(tb_TenKM, tb_NoiDungKM, tb_LoaiKHMoi, tb_LoaiKHTT, tb_LoaiKHVIP, tb_LoaiKHBT);
+            warning1.Source = _checkNhap._tb1._checkImage;
+            warning2.Source = _checkNhap._tb2._checkImage;
+            warning3.Source = _checkNhap._tb3._checkImage;
+            warning4.Source = _checkNhap._tb4._checkImage;
+            warning5.Source = _checkNhap._tb5._checkImage;
+            warning6.Source = _checkNhap._tb6._checkImage;
+
+
+
+            warning_Label1.Content = _checkNhap._tb1._warningMsg;
+            warning_Label2.Content = _checkNhap._tb2._warningMsg;
+            warning_Label3.Content = _checkNhap._tb3._warningMsg;
+            warning_Label4.Content = _checkNhap._tb4._warningMsg;
+            warning_Label5.Content = _checkNhap._tb5._warningMsg;
+            warning_Label6.Content = _checkNhap._tb6._warningMsg;
+
+
+        }
+
+    
     }
 }

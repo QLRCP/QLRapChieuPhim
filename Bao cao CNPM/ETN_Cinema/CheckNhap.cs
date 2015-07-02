@@ -143,6 +143,32 @@ namespace ETN_Cinema
 
     }
 
+    class CheckNhapKM
+    {
+        public CheckNhapTB _tb1, _tb2, _tb3, _tb4, _tb5, _tb6;
+        public string _warningMsg;
+        public void Check_Nhap(TextBox tb1, TextBox tb2, TextBox tb3, TextBox tb4, TextBox tb5, TextBox tb6)
+        {
+            _tb1 = new CheckNhapTB();
+            _tb2 = new CheckNhapTB();
+            _tb3 = new CheckNhapTB();
+            _tb4 = new CheckNhapTB();
+            _tb5 = new CheckNhapTB();
+            _tb6 = new CheckNhapTB();
+
+            _tb1.check_KM(tb1, "Tên chương trình khuyến mãi");
+            _tb2.check_KM(tb2, "Nội dung chương trình khuyến mãi");
+            _tb3.check_HSKM(tb3, "Hệ số Khách hàng mới");
+            _tb4.check_HSKM(tb4, "Hệ số Khách hàng thân thiết");
+            _tb5.check_HSKM(tb5, "Hệ số Khách hàng VIP");
+            _tb6.check_HSKM(tb6, "Hệ số Khách hàng bình thường");
+
+
+            _warningMsg = _tb1._warningMsg + _tb2._warningMsg + _tb3._warningMsg + _tb4._warningMsg + _tb5._warningMsg + _tb6._warningMsg;
+
+        }
+    }
+
     class CheckNhapTB
     {
         public BitmapImage _warningIcon;
@@ -627,9 +653,56 @@ namespace ETN_Cinema
             }
         }
 
+        //Check đăng ký suất chiếu ^
+
+        public void check_KM(TextBox tb,string str)
+        {
+            if (tb.Text.ToString() == "")
+            {
+                warning(str+ " không được để trống");
+            }
+            else
+            {
+                 if (tb.Text.Length > 35)
+                    {
+
+                        warning(str + " chỉ được chứa ký tự số");
+                    }
+                else
+                {
+                    pass();
+                }
+            }
+        }
+        public void check_HSKM(TextBox tb, string str)
+        {
+            if (tb.Text.ToString() == "")
+            {
+                warning(str + " không được để trống");
+            }
+            else
+            {
+
+                try
+                {
+                    float z = float.Parse(tb.Text);
+                    pass();
+                }
+                catch
+                {
+                    warning(str + " phải là số thực (vd: 1.2)");
+
+                }
+            }
+        
+        }
+        //Check khuyến mãi v
 
 
-        //Check đăng ký suất chiếu
+
+
+        //Check khuyến mãi ^
+
 
 
         //Load hình ảnh
