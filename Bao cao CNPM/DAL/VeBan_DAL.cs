@@ -12,13 +12,20 @@ namespace DAL
     {
         private sqlConnect m_sqlConnect = new sqlConnect();
 
+
+
         public VeBan_DAL()
         {
             m_sqlConnect.connect();
         }
 
-        public string GetMa(string _startString, int m_Index)
+        public String GetMa(string _startString, int m_Index)
         {
+
+            if (m_Index <= 0)
+            {
+                return _startString + "000" + 1;
+            }
             if (m_Index < 10)
             {
                 return _startString + "000" + m_Index;
@@ -45,23 +52,26 @@ namespace DAL
 
         public void Insert(VeBan_Pub _info)
         {
-            _info.MaVe = GetMa("VE", GetIndex_DAL.GetIndexVeBan());
-            string insertCommand = @"INSERT INTO  VEBAN(MaVe, MaGhe, GiaVe, LoaiSC, NgayChieu, GioChieu, TenPhim, PhongChieu, MaPDV, MaKH, MaNV, MaSC) VALUES('" +
+            int _index = GetIndex_DAL.GetIndexVeBan();
+            _info.MaVe = GetMa("VE", _index + 1);
+            string insertCommand = @"INSERT INTO  VEBAN(MAVE, MANV, MAKH, MAGHE, MASC, GIAVE,NGAYCHIEU,GIOCHIEU,TENPHIM, LOAISC, PHONGCHIEU) VALUES('" +
                 _info.MaVe + "', '" +
+                _info.MaNV + "', '" +
+                _info.MaKH + "', '" +
                 _info.MaGhe + "', '" +
+                _info.MaSC + "', '" +
+
                 _info.GiaVe + "', '" +
-                _info.LoaiSC + "', '" +
                 _info.NgayChieu.ToShortDateString() + "', '" +
                 _info.GioChieu.ToShortTimeString() + "', N'" +
                 _info.TenPhim + "', '" +
-                _info.PhongChieu + "', '" +
-                _info.MaPDV + "', '" +
-                _info.MaKH + "', '" +
-                _info.MaNV + "', '" +
-                _info.MaSC + "')";
+                 _info.LoaiSC + "', '" +
+                _info.PhongChieu + "')";
 
             m_sqlConnect.executeNonQuery(insertCommand);
-            GetIndex_DAL.SetIndexVeBan(GetIndex_DAL.GetIndexVeBan() + 1);
+
+            GetIndex_DAL.SetIndexVeBan(_index + 1);
+
         }
 
         public List<VeBan_Pub> GetVeTuLoaiSCvaTenPhim(string _LoaiSC, string _TenPhim)
@@ -83,7 +93,7 @@ namespace DAL
                 result.GioChieu = DateTime.Parse(reader["GioChieu"].ToString());
                 result.TenPhim = reader["TenPhim"].ToString();
                 result.PhongChieu = reader["PhongChieu"].ToString();
-                result.MaPDV = reader["MaPDV"].ToString();
+                // result.MaPDV = reader["MaPDV"].ToString();
                 result.MaKH = reader["MaKH"].ToString();
                 result.MaNV = reader["MaNV"].ToString();
                 result.MaSC = reader["MaSC"].ToString();

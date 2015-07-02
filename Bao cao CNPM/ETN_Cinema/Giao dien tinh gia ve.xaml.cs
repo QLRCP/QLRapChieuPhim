@@ -56,6 +56,8 @@ namespace ETN_Cinema
     public partial class Giao_dien_tinh_gia_ve : Window
     {
         List<SelectableThing> Lkm;
+        // List<PhieuDatVe_Pub> LPhieuDatVe;
+        // PhieuDatVe_BUL phieuDV_bul = new PhieuDatVe_BUL();
         public Giao_dien_tinh_gia_ve()
         {
             InitializeComponent();
@@ -67,6 +69,8 @@ namespace ETN_Cinema
                 Lkm.Add(new SelectableThing(tempList[i]));
             }
             CheckBoxes.ItemsSource = Lkm;
+
+
         }
 
         private void btn_Submit_Click(object sender, RoutedEventArgs e)
@@ -87,36 +91,38 @@ namespace ETN_Cinema
             KhachHang_BUL kh_bul = new KhachHang_BUL();
             if (tb_MaKH.Text != "")
             {
-                loaiKH = kh_bul.GetKHTuMaKH(tb_MaKH.Text).MaLoaiKH; 
+                loaiKH = kh_bul.GetKHTuMaKH(tb_MaKH.Text).MaLoaiKH;
             }
             else
             {
-                loaiKH = "Khách Hàng Bình Thường";
+                loaiKH = "LK0001";
             }
-            f_HeSoUuDai = kh_bul.GetHeSoUuDaiTuTenLoaiKH(loaiKH);
+            f_HeSoUuDai = (float)kh_bul.GetHeSoUuDaiTuTenLoaiKH(loaiKH);
             for (int i = 0; i < LMaKM.Count; i++)
             {
                 LHeSoKM.Add(kh_bul.GetHeSoKMTuMaKMVaLoaiKH(LMaKM[i], loaiKH));
             }
-            float Final_Giave = 0;
+            float Final_Giave = VarGlobal.g_VeBanPub.GiaVe;
 
+       //     float _GIAVE = 0;
             for (int i = 0; i < VarGlobal.g_LVeBanPub.Count; i++)
             {
+                
                 VarGlobal.g_LVeBanPub[i].GiaVe *= f_HeSoUuDai;
                 VarGlobal.g_LVeBanPub[i].MaKH = tb_MaKH.Text;
             }
-
+           // float _hesokhuyenmai = 0;
             for (int i = 0; i < VarGlobal.g_LVeBanPub.Count; i++)
             {
                 for (int j = 0; j < LHeSoKM.Count; j++)
                 {
-                    VarGlobal.g_LVeBanPub[i].GiaVe *= LHeSoKM[j];
+                    VarGlobal.g_LVeBanPub[i].GiaVe *=(float)LHeSoKM[j];
                 }
             }
             VeBan_BUL vb_BUL = new VeBan_BUL();
             for (int i = 0; i < VarGlobal.g_LVeBanPub.Count; i++)
             {
-                Final_Giave += VarGlobal.g_LVeBanPub[i].GiaVe;
+                Final_Giave = VarGlobal.g_LVeBanPub[i].GiaVe; 
                 vb_BUL.Insert(VarGlobal.g_LVeBanPub[i]);
             }
 

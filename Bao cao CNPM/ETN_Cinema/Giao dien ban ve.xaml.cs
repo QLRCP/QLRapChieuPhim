@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace ETN_Cinema
-{ 
+{
     /// <summary>
     /// Interaction logic for Giao_dien_ban_ve.xaml
     /// </summary>
@@ -129,9 +129,9 @@ namespace ETN_Cinema
             cb_PhongChieu.Text = "";
             cb_GioChieu.Text = "";
             Lphieudatve = pdv_BUL.GetMaPDVTheoVeBan(cb_TenPhim.SelectedValue.ToString(), LsuatchieuPUB[0].MaSC);
-            cb_PhieuDatVe.ItemsSource = Lphieudatve;
-            cb_PhieuDatVe.DisplayMemberPath = "MaPDV";
-            cb_PhieuDatVe.SelectedValuePath = "MaPDV";
+            //cb_PhieuDatVe.ItemsSource = Lphieudatve;
+            //cb_PhieuDatVe.DisplayMemberPath = "MaPDV";
+            //cb_PhieuDatVe.SelectedValuePath = "MaPDV";
         }
 
         private void btn_Next_Click(object sender, RoutedEventArgs e)
@@ -148,7 +148,7 @@ namespace ETN_Cinema
             VarGlobal.g_VeBanPub.NgayChieu = LsuatchieuPUB[0].NgayChieu;
             VarGlobal.g_VeBanPub.PhongChieu = cb_PhongChieu.Text;
             VarGlobal.g_VeBanPub.TenPhim = phim_bul.GetPhimTheoMaPhim(cb_TenPhim.Text.ToString()).TenPhim;
-            VarGlobal.g_VeBanPub.MaPDV = cb_PhieuDatVe.Text;
+
             VarGlobal.g_VeBanPub.MaNV = tb_MaNhanVien.Text;
             g_SuatChieu = LsuatchieuPUB[0].MaSC;
             Giao_dien_chon_ghe_dat_ve _gdcg = new Giao_dien_chon_ghe_dat_ve();
