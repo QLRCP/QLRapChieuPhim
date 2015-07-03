@@ -15,9 +15,9 @@
         <Label x:Name="lb_PhongChieu" Content="Phòng Chiếu" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
         <Button x:Name="btn_Chair" Content="Chọn Ghế" HorizontalAlignment="Left" Margin="288,263,0,0" VerticalAlignment="Top" Width="75" Click="btn_Chair_Click"/>
         <Label x:Name="lb_NgayDatVe" Content="Ngày Đặt Vé" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
-        <Label x:Name="lb_XuatNgayDatVe" Content="" HorizontalAlignment="Left" Margin="108,185,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lb_XuatNgayDatVe" Foreground="#FFF98800" Content="" HorizontalAlignment="Left" Margin="108,185,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lb_MaGheDat" Content="Mã Ghế Đặt" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFF98800"/>
-        <Label x:Name="lb_XuatMaGheDat" Content="" HorizontalAlignment="Left" Margin="108,216,0,0" VerticalAlignment="Top" Width="374"/>
+        <Label x:Name="lb_XuatMaGheDat" Foreground="#FFF98800" Content="" HorizontalAlignment="Left" Margin="108,216,0,0" VerticalAlignment="Top" Width="374"/>
         <Button x:Name="btn_Submit" Content="Submit" HorizontalAlignment="Left" Margin="172,263,0,0" VerticalAlignment="Top" Width="75" Click="btn_Submit_Click"/>
-    </Grid>
+    </Grid> 
 </Window>

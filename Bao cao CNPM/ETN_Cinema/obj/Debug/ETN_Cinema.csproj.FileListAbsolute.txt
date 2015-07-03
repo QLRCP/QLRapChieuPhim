@@ -617,3 +617,6 @@ E:\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\RdlCompile.compiled
 E:\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema_Content.g.cs
 E:\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\QLRAPCHIEUPHIM.mdf
 E:\QLRapChieuPhim\Bao cao CNPM\ETN_Cinema\bin\Debug\QLRAPCHIEUPHIM_log.ldf
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\ETN_Cinema\bin\Debug\QLRAPCHIEUPHIM.mdf
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\ETN_Cinema\bin\Debug\QLRAPCHIEUPHIM_log.ldf
+F:\My courses\QLRapChieuPhim.git\Bao cao CNPM\ETN_Cinema\obj\Debug\ETN_Cinema_Content.g.cs

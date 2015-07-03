@@ -40,11 +40,18 @@ namespace ETN_Cinema
             cb_TenPhim.ItemsSource = LphimPUB;
             cb_TenPhim.DisplayMemberPath = "MaPhim";
             cb_TenPhim.SelectedValuePath = "MaPhim";
-            lb_XuatNgayDatVe.Content = DateTime.Today.ToShortDateString();
+            lb_XuatNgayDatVe.Content = DateTime.Now;
         }
 
         private void cb_TenPhim_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            /*
+            cb_LoaiSuatChieu.ItemsSource = null;
+            cb_GioChieu.ItemsSource = null;
+            cb_NgayChieu.ItemsSource = null;
+            cb_PhongChieu.ItemsSource = null;
+             * */
+
             SuatChieu_BUL sc_BUL = new SuatChieu_BUL();
             LloaiSC = new List<string>();
             LGioChieu = new List<string>();
@@ -120,6 +127,7 @@ namespace ETN_Cinema
         private void XuatMaGhe(object sender, System.EventArgs e)
         {
             lb_XuatMaGheDat.Content = "";
+            lb_MaGheDat.Content = "Mã ghế";
             for (int i = 0; i < g_Lmaghe.Count; i++)
             {
                 lb_XuatMaGheDat.Content += g_Lmaghe[i];
@@ -173,16 +181,18 @@ namespace ETN_Cinema
                     pdv_pub.MaSC = LsuatchieuPUB[0].MaSC;
                     pdv_pub.MaGhe = g_Lmaghe[i];
                     pdv_BUL.Insert(pdv_pub);
+                    MessageBox.Show("Đặt vé thành công!");
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error!");
+                MessageBox.Show("Vui lòng nhập lại thông tin");
             }
-            MessageBox.Show("Đặt vé thành công!");
+            
             g_SuatChieu = null;
             g_Lmaghe = null;
-            this.Close();
+            
         }
     }
 }
