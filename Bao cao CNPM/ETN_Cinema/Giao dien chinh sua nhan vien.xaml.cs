@@ -158,8 +158,8 @@ namespace ETN_Cinema
                 if (_nhanvienPubTemp.HinhAnh != _pathOld)
                     GetIndex_BUL.SetIndex(_index + 1);
                 MessageBox.Show("Chỉnh Sửa Thành Công - Nhấn OK để tiếp tục");
+                VarGlobal.g_NhanVienPub = _nhanvienPub;
                 this.Close();
-
             }
             else
             {

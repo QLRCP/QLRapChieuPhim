@@ -47,5 +47,17 @@
                 </MenuItem.Header>
             </MenuItem>
         </Menu>
+        <Canvas x:Name="cv_XemHoso" HorizontalAlignment="Left" Height="455" Margin="10,99,0,0" VerticalAlignment="Top" Width="766">
+            <Label x:Name="lb_LoiChao" Canvas.Top="128" Width="295" Height="41" Canvas.Left="72"/>
+            <Image x:Name="avatar" Height="131" Canvas.Left="60" Canvas.Top="174" Width="127"/>
+            <Label Content="Họ Và Tên: " Canvas.Left="203" Canvas.Top="174" Width="68"/>
+            <Label Content="Ngày/Tháng/Năm Sinh: " Canvas.Left="203" Canvas.Top="205" RenderTransformOrigin="-0.265,-0.637"/>
+            <Label Content="Quê Quán: " Canvas.Left="203" Canvas.Top="236"/>
+            <Label Content="Công Ty:" Canvas.Left="203" Canvas.Top="262"/>
+            <Label x:Name="name" Content="" Canvas.Left="349" Canvas.Top="174" Width="141"/>
+            <Label x:Name="birthday" Content="" Canvas.Left="349" Canvas.Top="205" Width="142"/>
+            <Label x:Name="province" Content="" Canvas.Left="349" Canvas.Top="236" RenderTransformOrigin="0.157,0.009" Width="141"/>
+            <Label x:Name="company" Content="" Canvas.Left="350" Canvas.Top="262" RenderTransformOrigin="0.502,-0.498" Width="141"/>
+        </Canvas>
     </Grid>
 </Window>

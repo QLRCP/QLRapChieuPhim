@@ -24,9 +24,13 @@ namespace ETN_Cinema
         public Giao_dien_quan_li_nhan_su()
         {
             InitializeComponent();
+            lb_LoiChao.Content = "Xin Chào " + VarGlobal.g_NhanVienPub.HoTen + " đến với Phòng Nhân Sự ";
+            avatar.Source = GetHinhAnhTuPoster(VarGlobal.g_NhanVienPub.HinhAnh);
+            name.Content = VarGlobal.g_NhanVienPub.HoTen;
+            birthday.Content = VarGlobal.g_NhanVienPub.NamSinh.ToShortDateString();
+            province.Content = VarGlobal.g_NhanVienPub.QueQuan.ToString();
+            company.Content = "ETN Cinema";
         }
-
-
 
         private BitmapImage GetHinhAnhTuPoster(string _Poster)
         {

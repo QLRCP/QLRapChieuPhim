@@ -23,7 +23,6 @@ namespace ETN_Cinema
     /// </summary>
     public partial class Giao_dien_dang_nhap : Window
     {
-
         public Giao_dien_dang_nhap()
         {
             InitializeComponent();
